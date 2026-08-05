@@ -33,7 +33,7 @@ cualquier editor (incluso el editor de archivos de GitHub) y edita:
     Puedes obtenerlas dando clic derecho en Google Maps → "¿Qué hay aquí?".
   - `portada` / `galeria`: rutas a tus imágenes dentro de `assets/proyectos/`.
 - **`CERTIFICADOS`**: dos listas, `estudios` y `laborales`.
-- **`REFERENCIAS`**: tus jefes/empresas de contacto. **Importante**: pide
+-- **`REFERENCIAS`**: tus jefes/empresas de contacto. **Importante**: pide
   autorización antes de publicar el correo/teléfono de otra persona.
 
 No necesitas saber programar para editar este archivo — solo respeta las comillas

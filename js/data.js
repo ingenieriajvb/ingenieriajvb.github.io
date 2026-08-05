@@ -8,7 +8,7 @@
    ============================================================ */
 
 const SITE = {
-  nombre: "Julian [Apellido]",
+  nombre: "Julian Velasco",
   titulo: "Ingeniero Civil",
   ubicacionBase: "Cali, Valle del Cauca, Colombia",
   email: "tuemail@ejemplo.com",
