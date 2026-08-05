@@ -295,7 +295,7 @@ button{font-family:inherit;cursor:pointer;}
   position:relative;
   z-index:2;
   width:100%;
-  padding:0 32px 88px;
+  padding:calc(var(--nav-h) + 24px) 32px 88px;
   max-width:var(--maxw);
   margin:0 auto;
 }
