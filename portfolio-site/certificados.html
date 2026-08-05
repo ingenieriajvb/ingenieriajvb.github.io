@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificados — Julian [Apellido]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav solid">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Julian [Apellido]<small>Ingeniero Civil</small></a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-dropdown">
+        <button class="drop-btn">Proyectos <span class="caret"></span></button>
+        <ul class="dropdown">
+          <li><a href="proyectos.html">Todos los proyectos</a></li>
+          <li><a href="proyectos.html?cat=obra">Obra</a></li>
+          <li><a href="proyectos.html?cat=diseno">Diseños</a></li>
+        </ul>
+      </li>
+      <li><a href="certificados.html" class="active">Certificados</a></li>
+      <li><a href="contacto.html">Referencias</a></li>
+      <li><a href="contacto.html#contacto" class="nav-cta">Contáctame</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="eyebrow">Formación y experiencia</div>
+    <h1>Certificados</h1>
+    <p>Certificados de estudios profesionales y certificaciones laborales que respaldan mi experiencia.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="cert-tabs">
+      <button class="cert-tab-btn active" data-target="panel-estudios">Estudios</button>
+      <button class="cert-tab-btn" data-target="panel-laborales">Laborales</button>
+    </div>
+
+    <div class="cert-panel active" id="panel-estudios">
+      <div class="grid-certs" id="cert-estudios"></div>
+    </div>
+
+    <div class="cert-panel" id="panel-laborales">
+      <div class="grid-certs" id="cert-laborales"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Julian [Apellido] — Ingeniero Civil</span>
+    <a href="contacto.html#contacto">Contáctame</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

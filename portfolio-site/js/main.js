@@ -1,0 +1,221 @@
+/* ============================================================
+   COMPORTAMIENTO DEL SITIO
+   ============================================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  initNav();
+  initFooterYear();
+  initHomeFeatured();
+  initProyectosGrid();
+  initProyectoDetalle();
+  initCertificados();
+  initReferencias();
+});
+
+/* -------------------- Navegación -------------------- */
+function initNav() {
+  const nav = document.querySelector(".nav");
+  const toggle = document.querySelector(".nav-toggle");
+  const links = document.querySelector(".nav-links");
+  if (!nav) return;
+
+  const onScroll = () => {
+    if (window.scrollY > 12) nav.classList.add("scrolled");
+    else if (!nav.classList.contains("solid")) nav.classList.remove("scrolled");
+  };
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+
+  if (toggle && links) {
+    toggle.addEventListener("click", () => {
+      links.classList.toggle("open");
+    });
+    // Dropdown en móvil: al tocar el botón, despliega en vez de navegar
+    document.querySelectorAll(".has-dropdown > .drop-btn").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        if (window.innerWidth <= 880) {
+          e.preventDefault();
+          btn.parentElement.classList.toggle("open");
+        }
+      });
+    });
+  }
+}
+
+function initFooterYear() {
+  const el = document.getElementById("year");
+  if (el) el.textContent = new Date().getFullYear();
+}
+
+/* -------------------- Utilidades -------------------- */
+function categoriaLabel(cat) {
+  return cat === "obra" ? "Obra" : "Diseño";
+}
+
+function sheetCardHTML(p, index) {
+  return `
+    <a class="sheet-card" href="proyecto.html?id=${p.id}">
+      <div class="sheet-media">
+        <span class="sheet-tag">${categoriaLabel(p.categoria)}</span>
+        <span class="sheet-num mono">HOJA ${String(index + 1).padStart(2, "0")}</span>
+        <img src="${p.portada}" alt="${p.titulo}" loading="lazy">
+      </div>
+      <div class="sheet-body">
+        <h3>${p.titulo}</h3>
+        <p>${p.resumen}</p>
+        <div class="sheet-loc mono">
+          ${pinIcon()} ${p.ubicacion.nombre}
+        </div>
+      </div>
+    </a>`;
+}
+
+function pinIcon() {
+  return `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.4"/></svg>`;
+}
+
+/* -------------------- Home: proyectos destacados -------------------- */
+function initHomeFeatured() {
+  const el = document.getElementById("featured-projects");
+  if (!el) return;
+  const destacados = PROYECTOS.slice(0, 3);
+  el.innerHTML = destacados.map((p, i) => sheetCardHTML(p, i)).join("");
+}
+
+/* -------------------- Página: proyectos.html -------------------- */
+function initProyectosGrid() {
+  const el = document.getElementById("projects-grid");
+  if (!el) return;
+
+  const params = new URLSearchParams(window.location.search);
+  let filtro = params.get("cat") || "todos";
+
+  const buttons = document.querySelectorAll(".filter-btn");
+
+  function render() {
+    const lista = filtro === "todos" ? PROYECTOS : PROYECTOS.filter(p => p.categoria === filtro);
+    el.innerHTML = lista.length
+      ? lista.map((p, i) => sheetCardHTML(p, i)).join("")
+      : `<p style="color:var(--concrete)">Aún no hay proyectos en esta categoría.</p>`;
+    buttons.forEach(b => b.classList.toggle("active", b.dataset.filter === filtro));
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filtro = btn.dataset.filter;
+      const url = new URL(window.location);
+      if (filtro === "todos") url.searchParams.delete("cat");
+      else url.searchParams.set("cat", filtro);
+      window.history.replaceState({}, "", url);
+      render();
+    });
+  });
+
+  render();
+}
+
+/* -------------------- Página: proyecto.html (detalle) -------------------- */
+function initProyectoDetalle() {
+  const el = document.getElementById("project-detail");
+  if (!el) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const p = PROYECTOS.find(x => x.id === id) || PROYECTOS[0];
+
+  document.title = `${p.titulo} — ${SITE.nombre}`;
+
+  document.getElementById("pd-tag").textContent = categoriaLabel(p.categoria);
+  document.getElementById("pd-title").textContent = p.titulo;
+  document.getElementById("pd-summary").textContent = p.resumen;
+  document.getElementById("pd-hero-img").src = p.portada;
+  document.getElementById("pd-hero-img").alt = p.titulo;
+
+  document.getElementById("pd-anio").textContent = p.anio;
+  document.getElementById("pd-cliente").textContent = p.cliente;
+  document.getElementById("pd-rol").textContent = p.rol;
+  document.getElementById("pd-ubicacion-meta").textContent = p.ubicacion.nombre;
+
+  document.getElementById("pd-descripcion").innerHTML = p.descripcion.map(t => `<p>${t}</p>`).join("");
+  document.getElementById("pd-alcance").innerHTML = p.alcance.map(t => `<li>${t}</li>`).join("");
+
+  document.getElementById("pd-coord").textContent =
+    `${p.ubicacion.lat.toFixed(4)}° N, ${p.ubicacion.lng.toFixed(4)}° O`;
+  document.getElementById("pd-ubicacion-nombre").textContent = p.ubicacion.nombre;
+
+  const mapEl = document.getElementById("pd-map");
+  mapEl.src = `https://maps.google.com/maps?q=${p.ubicacion.lat},${p.ubicacion.lng}&z=13&output=embed`;
+  document.getElementById("pd-map-link").href =
+    `https://www.google.com/maps/search/?api=1&query=${p.ubicacion.lat},${p.ubicacion.lng}`;
+
+  const gal = document.getElementById("pd-gallery");
+  gal.innerHTML = p.galeria.map(src => `<img src="${src}" alt="${p.titulo}" loading="lazy">`).join("");
+
+  // Siguiente proyecto
+  const idx = PROYECTOS.findIndex(x => x.id === p.id);
+  const siguiente = PROYECTOS[(idx + 1) % PROYECTOS.length];
+  const nextEl = document.getElementById("pd-next");
+  if (nextEl) {
+    nextEl.href = `proyecto.html?id=${siguiente.id}`;
+    nextEl.querySelector(".next-title").textContent = siguiente.titulo;
+  }
+}
+
+/* -------------------- Página: certificados.html -------------------- */
+function initCertificados() {
+  const estudiosEl = document.getElementById("cert-estudios");
+  const laboralesEl = document.getElementById("cert-laborales");
+  if (!estudiosEl && !laboralesEl) return;
+
+  function certCard(c) {
+    return `
+      <div class="cert-card">
+        <div class="cert-thumb"><img src="${c.imagen}" alt="${c.titulo}" loading="lazy"></div>
+        <div class="cert-info">
+          <h4>${c.titulo}</h4>
+          <p>${c.institucion}</p>
+          <span class="cert-year mono">${c.anio}</span>
+          <a class="cert-view" href="${c.archivo}" target="_blank" rel="noopener">Ver certificado ↗</a>
+        </div>
+      </div>`;
+  }
+
+  if (estudiosEl) estudiosEl.innerHTML = CERTIFICADOS.estudios.map(certCard).join("");
+  if (laboralesEl) laboralesEl.innerHTML = CERTIFICADOS.laborales.map(certCard).join("");
+
+  const tabBtns = document.querySelectorAll(".cert-tab-btn");
+  const panels = document.querySelectorAll(".cert-panel");
+  tabBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabBtns.forEach(b => b.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.target).classList.add("active");
+    });
+  });
+}
+
+/* -------------------- Página: contacto.html -------------------- */
+function initReferencias() {
+  const el = document.getElementById("refs-grid");
+  if (!el) return;
+
+  function phoneIcon() {
+    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`;
+  }
+  function mailIcon() {
+    return `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>`;
+  }
+
+  el.innerHTML = REFERENCIAS.map(r => `
+    <div class="ref-card">
+      <h4>${r.nombre}</h4>
+      <span class="ref-role">${r.cargo}</span>
+      <div class="ref-company">${r.empresa} · ${r.periodo}</div>
+      <ul class="ref-list">
+        <li>${mailIcon()} <a href="mailto:${r.email}">${r.email}</a></li>
+        <li>${phoneIcon()} <a href="tel:${r.telefono.replace(/\s/g, '')}">${r.telefono}</a></li>
+      </ul>
+    </div>
+  `).join("");
+}

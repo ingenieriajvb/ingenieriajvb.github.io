@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto y referencias — Julian [Apellido]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav solid">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Julian [Apellido]<small>Ingeniero Civil</small></a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-dropdown">
+        <button class="drop-btn">Proyectos <span class="caret"></span></button>
+        <ul class="dropdown">
+          <li><a href="proyectos.html">Todos los proyectos</a></li>
+          <li><a href="proyectos.html?cat=obra">Obra</a></li>
+          <li><a href="proyectos.html?cat=diseno">Diseños</a></li>
+        </ul>
+      </li>
+      <li><a href="certificados.html">Certificados</a></li>
+      <li><a href="contacto.html" class="active">Referencias</a></li>
+      <li><a href="contacto.html#contacto" class="nav-cta">Contáctame</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="eyebrow">Respaldo profesional</div>
+    <h1>Referencias y contacto</h1>
+    <p>Jefes directos y empresas para las que he trabajado, disponibles para verificar mi experiencia laboral.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="ref-note">
+      Nota: la información de contacto que aparece aquí ha sido autorizada por cada referencia para ser publicada con fines laborales.
+    </div>
+    <div class="grid-refs" id="refs-grid"></div>
+  </div>
+</section>
+
+<section class="contact-cta" id="contacto">
+  <div class="container">
+    <h2>Hablemos de tu próximo proyecto</h2>
+    <p>Puedes escribirme directamente por correo, teléfono o LinkedIn.</p>
+    <div class="contact-links">
+      <a href="mailto:tuemail@ejemplo.com" class="btn btn-primary">tuemail@ejemplo.com</a>
+      <a href="tel:+573000000000" class="btn btn-ghost">+57 300 000 0000</a>
+      <a href="https://www.linkedin.com/in/tu-usuario" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Julian [Apellido] — Ingeniero Civil</span>
+    <a href="index.html">← Volver al inicio</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

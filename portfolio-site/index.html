@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julian Velasco — Ingeniero Civil</title>
+<meta name="description" content="Portafolio profesional de ingeniería civil: proyectos de obra, diseño estructural, vial e hidráulico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Julian Velasco<small>Ingeniero Civil</small></a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li class="has-dropdown">
+        <button class="drop-btn">Proyectos <span class="caret"></span></button>
+        <ul class="dropdown">
+          <li><a href="proyectos.html">Todos los proyectos</a></li>
+          <li><a href="proyectos.html?cat=obra">Obra</a></li>
+          <li><a href="proyectos.html?cat=diseno">Diseños</a></li>
+        </ul>
+      </li>
+      <li><a href="certificados.html">Certificados</a></li>
+      <li><a href="contacto.html">Referencias</a></li>
+      <li><a href="contacto.html#contacto" class="nav-cta">Contáctame</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="hero-photo" src="assets/img/hero.jpg" alt="Obra civil en construcción">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="eyebrow">Cali, Valle del Cauca · Colombia</div>
+    <h1>Ingeniería civil, ejecutada con precisión.</h1>
+    <p class="lead">Ingeniero civil con experiencia en obra, diseño estructural, vial e hidráulico. Este portafolio reúne los proyectos en los que he participado a lo largo de mi carrera profesional.</p>
+    <div class="hero-actions">
+      <a href="proyectos.html" class="btn btn-primary">Ver proyectos</a>
+      <a href="contacto.html#contacto" class="btn btn-ghost">Contáctame</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>8+</b><span>Años de experiencia</span></div>
+      <div class="stat"><b>20+</b><span>Proyectos ejecutados</span></div>
+      <div class="stat"><b>3</b><span>Áreas: obra, diseño, interventoría</span></div>
+      <div class="stat"><b>2016</b><span>Ingeniero civil egresado</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="proyectos">
+  <div class="container">
+    <div class="dimline"><span class="tick"></span><span class="rule"></span><span class="label">Selección</span><span class="rule"></span><span class="tick"></span></div>
+    <div class="section-head">
+      <div>
+        <h2>Proyectos destacados</h2>
+        <p>Una muestra de obras y diseños desarrollados en los últimos años.</p>
+      </div>
+      <a href="proyectos.html" class="btn btn-dark">Ver todos los proyectos</a>
+    </div>
+    <div class="grid-projects" id="featured-projects"></div>
+  </div>
+</section>
+
+<section style="background:var(--paper-dim);">
+  <div class="container">
+    <div class="dimline"><span class="tick"></span><span class="rule"></span><span class="label">Áreas de trabajo</span><span class="rule"></span><span class="tick"></span></div>
+    <div class="section-head">
+      <div>
+        <h2>Cómo puedo aportar a tu proyecto</h2>
+        <p>Acompañamiento técnico desde el diseño hasta la entrega de la obra.</p>
+      </div>
+    </div>
+    <div class="grid-projects">
+      <div class="sheet-card" style="cursor:default;">
+        <div class="sheet-body">
+          <h3>Dirección y residencia de obra</h3>
+          <p>Control técnico, administrativo y de calidad durante la ejecución de proyectos de infraestructura y edificación.</p>
+        </div>
+      </div>
+      <div class="sheet-card" style="cursor:default;">
+        <div class="sheet-body">
+          <h3>Diseño estructural</h3>
+          <p>Modelación, análisis y diseño de estructuras en concreto reforzado y acero, con memorias de cálculo y planos.</p>
+        </div>
+      </div>
+      <div class="sheet-card" style="cursor:default;">
+        <div class="sheet-body">
+          <h3>Diseño vial e hidráulico</h3>
+          <p>Diseño geométrico de vías, pavimentos y estudios hidráulicos para el manejo de aguas lluvias.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-cta">
+  <div class="container">
+    <h2>¿Tienes un proyecto en mente?</h2>
+    <p>Estoy disponible para nuevas oportunidades laborales y proyectos de consultoría en ingeniería civil.</p>
+    <div class="contact-links">
+      <a href="contacto.html#contacto" class="btn btn-primary">Ver información de contacto</a>
+      <a href="certificados.html" class="btn btn-ghost">Ver certificados</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Julian Velasco — Ingeniero Civil</span>
+    <span>Cali, Valle del Cauca, Colombia</span>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

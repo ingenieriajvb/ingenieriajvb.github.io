@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto — Julian [Apellido]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="project-detail">
+
+<nav class="nav solid">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Julian [Apellido]<small>Ingeniero Civil</small></a>
+    <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="has-dropdown">
+        <button class="drop-btn">Proyectos <span class="caret"></span></button>
+        <ul class="dropdown">
+          <li><a href="proyectos.html">Todos los proyectos</a></li>
+          <li><a href="proyectos.html?cat=obra">Obra</a></li>
+          <li><a href="proyectos.html?cat=diseno">Diseños</a></li>
+        </ul>
+      </li>
+      <li><a href="certificados.html">Certificados</a></li>
+      <li><a href="contacto.html">Referencias</a></li>
+      <li><a href="contacto.html#contacto" class="nav-cta">Contáctame</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header" id="project-detail">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="eyebrow" id="pd-tag">Categoría</div>
+    <h1 id="pd-title">Título del proyecto</h1>
+    <p id="pd-summary">Resumen del proyecto.</p>
+    <div class="detail-meta">
+      <div class="meta-item"><span>Año</span><b id="pd-anio">—</b></div>
+      <div class="meta-item"><span>Cliente</span><b id="pd-cliente">—</b></div>
+      <div class="meta-item"><span>Rol</span><b id="pd-rol">—</b></div>
+      <div class="meta-item"><span>Ubicación</span><b id="pd-ubicacion-meta">—</b></div>
+    </div>
+  </div>
+</header>
+
+<section class="detail-body">
+  <div class="container">
+    <img id="pd-hero-img" src="" alt="" style="width:100%;aspect-ratio:16/8;object-fit:cover;margin-bottom:56px;border:1px solid var(--line);">
+
+    <div class="detail-grid">
+      <div class="detail-desc">
+        <div class="dimline"><span class="tick"></span><span class="rule"></span><span class="label">Descripción</span></div>
+        <h2>Sobre el proyecto</h2>
+        <div id="pd-descripcion"></div>
+        <h2 style="margin-top:32px;">Alcance</h2>
+        <ul id="pd-alcance"></ul>
+      </div>
+
+      <aside class="detail-map">
+        <h4>Ubicación del proyecto</h4>
+        <div id="pd-ubicacion-nombre" style="font-weight:600;margin-bottom:6px;"></div>
+        <div class="coord" id="pd-coord"></div>
+        <iframe id="pd-map" loading="lazy" title="Mapa de ubicación"></iframe>
+        <a class="map-link" id="pd-map-link" href="#" target="_blank" rel="noopener">Abrir en Google Maps ↗</a>
+      </aside>
+    </div>
+
+    <div class="dimline" style="margin-top:64px;"><span class="tick"></span><span class="rule"></span><span class="label">Galería</span><span class="rule"></span><span class="tick"></span></div>
+    <div class="gallery" id="pd-gallery"></div>
+
+    <div style="margin-top:64px;text-align:right;">
+      <a id="pd-next" class="btn btn-dark" href="#">
+        Siguiente proyecto: <span class="next-title"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Julian [Apellido] — Ingeniero Civil</span>
+    <a href="proyectos.html">← Volver a proyectos</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
