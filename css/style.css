@@ -284,12 +284,12 @@ button{font-family:inherit;cursor:pointer;}
   inset:0;
   display:block;
   background-image:
-    linear-gradient(rgba(143,193,204,.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(143,193,204,.16) 1px, transparent 1px),
-    linear-gradient(rgba(143,193,204,.28) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(143,193,204,.28) 2px, transparent 2px);
-  background-size:24px 24px, 24px 24px, 240px 240px, 240px 240px;
-  opacity:.75;
+    linear-gradient(rgba(143,193,204,.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,193,204,.10) 1px, transparent 1px),
+    linear-gradient(rgba(143,193,204,.22) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(143,193,204,.22) 2px, transparent 2px);
+  background-size:30px 30px, 30px 30px, 240px 240px, 240px 240px;
+  opacity:.55;
   pointer-events:none;
 }
 
