@@ -272,7 +272,7 @@ button{font-family:inherit;cursor:pointer;}
   align-items:flex-end;
   color:var(--white);
   background:
-    linear-gradient(180deg, rgba(10,46,54,.55) 0%, rgba(10,46,54,.35) 40%, rgba(10,46,54,.92) 100%),
+    linear-gradient(180deg, rgba(10,46,54,.62) 0%, rgba(10,46,54,.38) 40%, rgba(10,46,54,.94) 100%),
     var(--petrol-950);
   overflow:hidden;
 }
@@ -280,7 +280,17 @@ button{font-family:inherit;cursor:pointer;}
   display:none;
 }
 .hero-grid{
-  display:none;
+  position:absolute;
+  inset:0;
+  display:block;
+  background-image:
+    linear-gradient(rgba(143,193,204,.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,193,204,.16) 1px, transparent 1px),
+    linear-gradient(rgba(143,193,204,.28) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(143,193,204,.28) 2px, transparent 2px);
+  background-size:24px 24px, 24px 24px, 240px 240px, 240px 240px;
+  opacity:.75;
+  pointer-events:none;
 }
 
 .hero-inner{
