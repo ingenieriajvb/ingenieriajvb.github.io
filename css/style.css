@@ -284,14 +284,14 @@ button{font-family:inherit;cursor:pointer;}
   position:absolute;
   inset:0;
   display:block;
-  background-color:rgba(8,35,40,.18);
+  background-color:rgba(8,35,40,.12);
   background-image:
-    linear-gradient(rgba(143,193,204,.22) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(143,193,204,.22) 1px, transparent 1px),
-    linear-gradient(rgba(143,193,204,.34) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(143,193,204,.34) 2px, transparent 2px);
+    linear-gradient(rgba(143,193,204,.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,193,204,.12) 1px, transparent 1px),
+    linear-gradient(rgba(143,193,204,.20) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(143,193,204,.20) 2px, transparent 2px);
   background-size:24px 24px, 24px 24px, 240px 240px, 240px 240px;
-  opacity:.9;
+  opacity:.55;
   pointer-events:none;
   z-index:0;
 }
