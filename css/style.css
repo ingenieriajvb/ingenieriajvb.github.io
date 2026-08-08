@@ -277,20 +277,12 @@ button{font-family:inherit;cursor:pointer;}
   overflow:hidden;
 }
 .hero-photo{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  object-fit:cover;
-  opacity:.55;
-  mix-blend-mode:luminosity;
+  display:none;
 }
 .hero-grid{
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(143,193,204,.14) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(143,193,204,.14) 1px, transparent 1px);
-  background-size:56px 56px;
-  pointer-events:none;
+  display:none;
 }
+
 .hero-inner{
   position:relative;
   z-index:2;
