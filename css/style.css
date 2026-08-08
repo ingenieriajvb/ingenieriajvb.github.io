@@ -272,7 +272,8 @@ button{font-family:inherit;cursor:pointer;}
   align-items:flex-end;
   color:var(--white);
   background:
-    linear-gradient(180deg, rgba(10,46,54,.62) 0%, rgba(10,46,54,.38) 40%, rgba(10,46,54,.94) 100%),
+    radial-gradient(circle at top left, rgba(255,255,255,.08), transparent 38%),
+    linear-gradient(180deg, rgba(10,46,54,.72) 0%, rgba(10,46,54,.38) 45%, rgba(10,46,54,.95) 100%),
     var(--petrol-950);
   overflow:hidden;
 }
@@ -283,14 +284,16 @@ button{font-family:inherit;cursor:pointer;}
   position:absolute;
   inset:0;
   display:block;
+  background-color:rgba(8,35,40,.18);
   background-image:
-    linear-gradient(rgba(143,193,204,.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(143,193,204,.10) 1px, transparent 1px),
-    linear-gradient(rgba(143,193,204,.22) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(143,193,204,.22) 2px, transparent 2px);
-  background-size:30px 30px, 30px 30px, 240px 240px, 240px 240px;
-  opacity:.55;
+    linear-gradient(rgba(143,193,204,.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,193,204,.22) 1px, transparent 1px),
+    linear-gradient(rgba(143,193,204,.34) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(143,193,204,.34) 2px, transparent 2px);
+  background-size:24px 24px, 24px 24px, 240px 240px, 240px 240px;
+  opacity:.9;
   pointer-events:none;
+  z-index:0;
 }
 
 .hero-inner{
