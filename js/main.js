@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initProyectoDetalle();
   initCertificados();
   initReferencias();
+  initContacto();
 });
 
 /* -------------------- Navegación -------------------- */
@@ -196,6 +197,26 @@ function initCertificados() {
 }
 
 /* -------------------- Página: contacto.html -------------------- */
+function initContacto() {
+  const emailEl = document.getElementById("contact-email");
+  const phoneEl = document.getElementById("contact-phone");
+  const linkedinEl = document.getElementById("contact-linkedin");
+
+  if (emailEl) {
+    emailEl.textContent = SITE.email || "Correo no disponible";
+    emailEl.href = `mailto:${SITE.email || ""}`;
+  }
+
+  if (phoneEl) {
+    phoneEl.textContent = SITE.telefono || "Teléfono no disponible";
+    phoneEl.href = `tel:${(SITE.telefono || "").replace(/\s+/g, "")}`;
+  }
+
+  if (linkedinEl) {
+    linkedinEl.href = SITE.linkedin || "#";
+  }
+}
+
 function initReferencias() {
   const el = document.getElementById("refs-grid");
   if (!el) return;

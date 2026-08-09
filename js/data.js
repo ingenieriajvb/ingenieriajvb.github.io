@@ -11,8 +11,8 @@ const SITE = {
   nombre: "Julian Velasco",
   titulo: "Ingeniero Civil",
   ubicacionBase: "Cali, Valle del Cauca, Colombia",
-  email: "tuemail@ejemplo.com",
-  telefono: "+57 300 000 0000",
+  email: "julian89@live.com",
+  telefono: "+57 320 609 3811",
   linkedin: "https://www.linkedin.com/in/tu-usuario",
 };
 
