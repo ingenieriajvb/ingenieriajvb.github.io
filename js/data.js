@@ -14,6 +14,16 @@ const SITE = {
   email: "julian89@live.com",
   telefono: "+57 320 609 3811",
   linkedin: "https://www.linkedin.com/in/tu-usuario",
+  heroImagen: "assets/img/hero.jpg",
+  heroAlt: "Obra civil en construcción",
+  heroEyebrow: "Cali, Valle del Cauca · Colombia",
+  heroTitulo: "Ingeniería civil, ejecutada con precisión.",
+  heroDescripcion: "Este portafolio reúne los proyectos en los que he participado a lo largo de mi carrera profesional.",
+  heroStats: [
+    { valor: "8+", texto: "Años de experiencia" },
+    { valor: "20+", texto: "Proyectos ejecutados" },
+    { valor: "3", texto: "Áreas: obra, diseño, interventoría" }
+  ]
 };
 
 /* -------------------- PROYECTOS -------------------- */

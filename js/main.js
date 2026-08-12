@@ -5,6 +5,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initFooterYear();
+  initSiteContent();
   initHomeFeatured();
   initProyectosGrid();
   initProyectoDetalle();
@@ -48,18 +49,49 @@ function initFooterYear() {
   if (el) el.textContent = new Date().getFullYear();
 }
 
+function initSiteContent() {
+  document.title = `${SITE.nombre} — ${SITE.titulo}`;
+
+  document.querySelectorAll(".brand").forEach((el) => {
+    el.innerHTML = `${SITE.nombre}<small>${SITE.titulo}</small>`;
+  });
+
+  const heroPhoto = document.querySelector(".hero-photo");
+  if (heroPhoto) {
+    heroPhoto.src = SITE.heroImagen || heroPhoto.src;
+    heroPhoto.alt = SITE.heroAlt || heroPhoto.alt;
+  }
+
+  const heroEyebrow = document.querySelector(".hero .eyebrow");
+  if (heroEyebrow) heroEyebrow.textContent = SITE.heroEyebrow || SITE.ubicacionBase;
+
+  const heroTitle = document.querySelector(".hero h1");
+  if (heroTitle) heroTitle.textContent = SITE.heroTitulo || heroTitle.textContent;
+
+  const heroDesc = document.querySelector(".hero .lead");
+  if (heroDesc) heroDesc.textContent = SITE.heroDescripcion || heroDesc.textContent;
+
+  const heroStats = document.querySelector(".hero-stats");
+  if (heroStats && Array.isArray(SITE.heroStats)) {
+    heroStats.innerHTML = SITE.heroStats.map((stat) => `
+      <div class="stat"><b>${stat.valor}</b><span>${stat.texto}</span></div>
+    `).join("");
+  }
+}
+
 /* -------------------- Utilidades -------------------- */
 function categoriaLabel(cat) {
   return cat === "obra" ? "Obra" : "Diseño";
 }
 
 function sheetCardHTML(p, index) {
+  const portada = getMediaSource(p.portada);
   return `
     <a class="sheet-card" href="proyecto.html?id=${p.id}">
       <div class="sheet-media">
         <span class="sheet-tag">${categoriaLabel(p.categoria)}</span>
         <span class="sheet-num mono">HOJA ${String(index + 1).padStart(2, "0")}</span>
-        <img src="${p.portada}" alt="${p.titulo}" loading="lazy">
+        <img src="${portada}" alt="${p.titulo}" loading="lazy">
       </div>
       <div class="sheet-body">
         <h3>${p.titulo}</h3>
@@ -73,6 +105,35 @@ function sheetCardHTML(p, index) {
 
 function pinIcon() {
   return `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.4"/></svg>`;
+}
+
+function getMediaSource(media, fallback = "") {
+  if (typeof media === "string") return media;
+  if (media && typeof media === "object") return media.src || media.url || fallback;
+  return fallback;
+}
+
+function mediaToMarkup(item, alt = "") {
+  if (typeof item === "string") {
+    return `<img src="${item}" alt="${alt}" loading="lazy">`;
+  }
+
+  if (item && typeof item === "object") {
+    const src = item.src || item.url || "";
+    if (item.type === "video" || item.kind === "video") {
+      const poster = item.poster ? ` poster="${item.poster}"` : "";
+      return `<video controls preload="metadata"${poster}><source src="${src}" type="${item.mime || "video/mp4"}"></video>`;
+    }
+    return `<img src="${src}" alt="${item.alt || alt}" loading="lazy">`;
+  }
+
+  return "";
+}
+
+function getProjectMediaItems(p) {
+  if (Array.isArray(p.media) && p.media.length) return p.media;
+  if (Array.isArray(p.galeria) && p.galeria.length) return p.galeria;
+  return [p.portada];
 }
 
 /* -------------------- Home: proyectos destacados -------------------- */
@@ -129,7 +190,8 @@ function initProyectoDetalle() {
   document.getElementById("pd-tag").textContent = categoriaLabel(p.categoria);
   document.getElementById("pd-title").textContent = p.titulo;
   document.getElementById("pd-summary").textContent = p.resumen;
-  document.getElementById("pd-hero-img").src = p.portada;
+  const heroMedia = getMediaSource(p.portada) || getMediaSource(getProjectMediaItems(p)[0]);
+  document.getElementById("pd-hero-img").src = heroMedia;
   document.getElementById("pd-hero-img").alt = p.titulo;
 
   document.getElementById("pd-anio").textContent = p.anio;
@@ -150,7 +212,8 @@ function initProyectoDetalle() {
     `https://www.google.com/maps/search/?api=1&query=${p.ubicacion.lat},${p.ubicacion.lng}`;
 
   const gal = document.getElementById("pd-gallery");
-  gal.innerHTML = p.galeria.map(src => `<img src="${src}" alt="${p.titulo}" loading="lazy">`).join("");
+  const mediaItems = getProjectMediaItems(p);
+  gal.innerHTML = mediaItems.map(item => mediaToMarkup(item, p.titulo)).join("");
 
   // Siguiente proyecto
   const idx = PROYECTOS.findIndex(x => x.id === p.id);
