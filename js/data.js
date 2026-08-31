@@ -23,7 +23,16 @@ const SITE = {
     { valor: "8+", texto: "Años de experiencia" },
     { valor: "20+", texto: "Proyectos ejecutados" },
     { valor: "3", texto: "Áreas: obra, diseño, interventoría" }
-  ]
+  ],
+  acercaDeNosotros: {
+    titulo: "Acerca de nosotros",
+    descripcion: "Somos un equipo enfocado en la ingeniería civil, la ejecución de proyectos de infraestructura y el acompañamiento técnico desde la concepción hasta la entrega final de la obra.",
+    puntos: [
+      "Dirección técnica y supervisión de obra.",
+      "Diseño estructural, vial e hidráulico.",
+      "Gestión de calidad, planificación y control de proyectos."
+    ]
+  }
 };
 
 /* -------------------- PROYECTOS -------------------- */

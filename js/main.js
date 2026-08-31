@@ -77,6 +77,17 @@ function initSiteContent() {
       <div class="stat"><b>${stat.valor}</b><span>${stat.texto}</span></div>
     `).join("");
   }
+
+  const acerca = SITE.acercaDeNosotros || {};
+  const aboutTitle = document.getElementById("about-title");
+  const aboutDescription = document.getElementById("about-description");
+  const aboutList = document.getElementById("about-list");
+
+  if (aboutTitle && acerca.titulo) aboutTitle.textContent = acerca.titulo;
+  if (aboutDescription && acerca.descripcion) aboutDescription.textContent = acerca.descripcion;
+  if (aboutList && Array.isArray(acerca.puntos)) {
+    aboutList.innerHTML = acerca.puntos.map((punto) => `<li>${punto}</li>`).join("");
+  }
 }
 
 /* -------------------- Utilidades -------------------- */

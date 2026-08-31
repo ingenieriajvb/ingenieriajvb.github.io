@@ -18,6 +18,7 @@
     <button class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="#acerca">Acerca de nosotros</a></li>
       <li class="has-dropdown">
         <button class="drop-btn">Proyectos <span class="caret"></span></button>
         <ul class="dropdown">
@@ -26,8 +27,6 @@
           <li><a href="proyectos.html?cat=diseno">Diseños</a></li>
         </ul>
       </li>
-      <li><a href="certificados.html">Certificados</a></li>
-      <li><a href="contacto.html">Referencias</a></li>
       <li><a href="contacto.html#contacto" class="nav-cta">Contáctame</a></li>
     </ul>
   </div>
@@ -52,6 +51,29 @@
     </div>
   </div>
 </header>
+
+<section id="acerca" class="about-section">
+  <div class="container">
+    <div class="dimline"><span class="tick"></span><span class="rule"></span><span class="label">Nosotros</span><span class="rule"></span><span class="tick"></span></div>
+    <div class="section-head">
+      <div>
+        <h2 id="about-title">Acerca de nosotros</h2>
+        <p id="about-description">Somos un equipo enfocado en la ingeniería civil, la ejecución de proyectos de infraestructura y el acompañamiento técnico desde la concepción hasta la entrega final de la obra.</p>
+      </div>
+    </div>
+    <div class="grid-projects">
+      <div class="sheet-card" style="cursor:default;">
+        <div class="sheet-body">
+          <ul id="about-list" style="margin:0; padding-left:1.15rem; line-height:1.8; color:var(--ink-700);">
+            <li>Dirección técnica y supervisión de obra.</li>
+            <li>Diseño estructural, vial e hidráulico.</li>
+            <li>Gestión de calidad, planificación y control de proyectos.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="proyectos">
   <div class="container">
@@ -105,7 +127,7 @@
     <p>Estoy disponible para nuevas oportunidades laborales y proyectos.</p>
     <div class="contact-links">
       <a href="contacto.html#contacto" class="btn btn-primary">Ver información de contacto</a>
-      <a href="certificados.html" class="btn btn-ghost">Ver certificados</a>
+      <a href="#acerca" class="btn btn-ghost">Conocer más</a>
     </div>
   </div>
 </section>
