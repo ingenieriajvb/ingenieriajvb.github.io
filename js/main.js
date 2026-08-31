@@ -283,7 +283,7 @@ function initContacto() {
 
   if (phoneEl) {
     phoneEl.textContent = SITE.telefono || "Teléfono no disponible";
-    phoneEl.href = `tel:${(SITE.telefono || "").replace(/\s+/g, "")}`;
+    phoneEl.href = `https://wa.me/573206093811?text=${encodeURIComponent("Hola Julian, quiero hablar sobre un proyecto.")}`;
   }
 
   if (linkedinEl) {
