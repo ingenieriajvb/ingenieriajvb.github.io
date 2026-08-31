@@ -274,7 +274,6 @@ function initCertificados() {
 function initContacto() {
   const emailEl = document.getElementById("contact-email");
   const phoneEl = document.getElementById("contact-phone");
-  const whatsappEl = document.getElementById("contact-whatsapp");
   const linkedinEl = document.getElementById("contact-linkedin");
 
   if (emailEl) {
@@ -285,11 +284,6 @@ function initContacto() {
   if (phoneEl) {
     phoneEl.textContent = SITE.telefono || "Teléfono no disponible";
     phoneEl.href = `tel:${(SITE.telefono || "").replace(/\s+/g, "")}`;
-  }
-
-  if (whatsappEl) {
-    whatsappEl.href = `https://wa.me/573206093811?text=${encodeURIComponent("Hola Julian, quiero hablar sobre un proyecto.")}`;
-    whatsappEl.setAttribute("aria-label", "WhatsApp");
   }
 
   if (linkedinEl) {
