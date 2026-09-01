@@ -275,25 +275,15 @@ function initContacto() {
   const emailEl = document.getElementById("contact-email");
   const phoneEl = document.getElementById("contact-phone");
   const linkedinEl = document.getElementById("contact-linkedin");
-  const emailSummaryEl = document.getElementById("contact-email-summary");
-  const phoneSummaryEl = document.getElementById("contact-phone-summary");
 
   if (emailEl) {
     emailEl.textContent = SITE.email || "Correo no disponible";
     emailEl.href = `mailto:${SITE.email || ""}`;
   }
-  if (emailSummaryEl) {
-    emailSummaryEl.textContent = SITE.email || "Correo no disponible";
-    emailSummaryEl.href = `mailto:${SITE.email || ""}`;
-  }
 
   if (phoneEl) {
     phoneEl.textContent = SITE.telefono || "Teléfono no disponible";
     phoneEl.href = `https://wa.me/573206093811?text=${encodeURIComponent("Hola Julian, quiero hablar sobre un proyecto.")}`;
-  }
-  if (phoneSummaryEl) {
-    phoneSummaryEl.textContent = SITE.telefono || "Teléfono no disponible";
-    phoneSummaryEl.href = `https://wa.me/573206093811?text=${encodeURIComponent("Hola Julian, quiero hablar sobre un proyecto.")}`;
   }
 
   if (linkedinEl) {

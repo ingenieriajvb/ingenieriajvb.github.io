@@ -395,36 +395,9 @@ section{padding:96px 0;}
   background: var(--white);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 36px 0 40px;
-}
-
-.contact-summary-inner {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
-  gap: 30px;
-  align-items: center;
-}
-
-.contact-summary-item {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px 0;
-}
-
-.summary-label {
-  font-family: var(--font-mono);
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--concrete);
-}
-
-.contact-summary-item a {
-  color: var(--petrol-950);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 600;
-  word-break: break-word;
+  padding: 0;
+  height: 96px;
+  width: 100%;
 }
 
 /* Tarjetas de proyecto — estilo "hoja de plano" */
