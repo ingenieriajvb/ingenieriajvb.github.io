@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initProyectosGrid();
   initProyectoDetalle();
   initCertificados();
-  initReferencias();
   initContacto();
 });
 
