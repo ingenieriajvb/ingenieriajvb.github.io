@@ -387,6 +387,21 @@ section{padding:96px 0;}
 .page-header .eyebrow{color:var(--blueprint);margin-bottom:14px;}
 .page-header .eyebrow::before{background:var(--blueprint);}
 
+.page-header + .contact-cta {
+  position: relative;
+  margin-top: 0;
+}
+.page-header + .contact-cta::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 28px;
+  background: var(--white);
+  position: absolute;
+  top: -28px;
+  left: 0;
+}
+
 /* Tarjetas de proyecto — estilo "hoja de plano" */
 .grid-projects{
   display:grid;
