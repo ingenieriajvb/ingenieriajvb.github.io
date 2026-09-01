@@ -223,32 +223,3 @@ const CERTIFICADOS = {
   ]
 };
 
-/* -------------------- REFERENCIAS LABORALES -------------------- */
-/* Estos datos son visibles públicamente en el sitio.
-   Confirma con cada persona antes de publicar su contacto. */
-const REFERENCIAS = [
-  {
-    nombre: "Ing. Andrés [Apellido]",
-    cargo: "Director de obra",
-    empresa: "Constructora XYZ S.A.S.",
-    periodo: "2022 – 2023",
-    email: "andres@ejemplo.com",
-    telefono: "+57 300 000 0001"
-  },
-  {
-    nombre: "Ing. Carolina [Apellido]",
-    cargo: "Gerente de proyectos",
-    empresa: "Consorcio Vial del Sur",
-    periodo: "2021",
-    email: "carolina@ejemplo.com",
-    telefono: "+57 300 000 0002"
-  },
-  {
-    nombre: "Ing. Felipe [Apellido]",
-    cargo: "Rector / Representante legal",
-    empresa: "Institución educativa privada",
-    periodo: "2019 – 2020",
-    email: "felipe@ejemplo.com",
-    telefono: "+57 300 000 0003"
-  }
-];
