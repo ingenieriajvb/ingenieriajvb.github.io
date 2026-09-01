@@ -26,11 +26,11 @@ const SITE = {
   ],
   acercaDeNosotros: {
     titulo: "Acerca de nosotros",
-    descripcion: "Somos un equipo enfocado en la ingeniería civil, la ejecución de proyectos de infraestructura y el acompañamiento técnico desde la concepción hasta la entrega final de la obra.",
+    descripcion: "Mi nombre es Julián Andrés Velasco Bonilla, ingeniero civil graduado de la Universidad del Cauca, con especialización técnica en Sistemas de Información Geográfica (SIG) y estudios en costos y presupuestos, programación de obra con Project y desarrollo de Inteligencia Artificial (IA) básica y aplicada a la ingeniería.",
     puntos: [
-      "Dirección técnica y supervisión de obra.",
-      "Diseño estructural, vial e hidráulico.",
-      "Gestión de calidad, planificación y control de proyectos."
+      "En Ingeniería JVB contamos con un equipo de profesionales en todas las áreas de la ingeniería y la arquitectura.",
+      "Contamos con un equipo técnico de construcción de excelente calidad.",
+      "Acompañamos cada proyecto desde la planificación hasta la entrega final con enfoque técnico, eficiente y responsable."
     ]
   }
 };
