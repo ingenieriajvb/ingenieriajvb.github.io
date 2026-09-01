@@ -68,7 +68,7 @@ puedas ver el diseño terminado. Reemplázalas por tus fotos reales:
 3. En GitHub, entra a **Settings → Pages**.
 4. En "Source" selecciona la rama `main` y la carpeta `/ (root)`. Guarda.
 5. Espera 1–2 minutos: GitHub te dará una URL como
-   `https://TU-USUARIO.github.io/mi-portafolio/`.
+   `https://ingenieriajvb.github.io/`.
 6. Cada vez que hagas `git push` con cambios, el sitio se actualiza solo.
 
 ## 4. Personalizar el diseño (opcional)
