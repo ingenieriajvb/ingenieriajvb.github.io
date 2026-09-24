@@ -21,7 +21,7 @@ const SITE = {
   heroDescripcion: "Este portafolio reúne los proyectos en los que he participado a lo largo de mi carrera profesional.",
   heroStats: [
     { valor: "8+", texto: "Años de experiencia" },
-    { valor: "20+", texto: "Proyectos ejecutados" },
+    { valor: "8+", texto: "Proyectos ejecutados" },
     { valor: "3", texto: "Áreas: obra, diseño, remodelación" }
   ],
   acercaDeNosotros: {
