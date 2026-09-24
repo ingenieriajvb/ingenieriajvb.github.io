@@ -11,7 +11,7 @@ const SITE = {
   nombre: "Julian Velasco",
   titulo: "Ingeniero Civil",
   ubicacionBase: "Cali, Valle del Cauca, Colombia",
-  email: "julian89@live.com",
+  email: "ingenieriajvb@gmail.com",
   telefono: "+57 320 609 3811",
   linkedin: "https://www.linkedin.com/in/tu-usuario",
   heroImagen: "assets/img/hero.jpg",
@@ -22,7 +22,7 @@ const SITE = {
   heroStats: [
     { valor: "8+", texto: "Años de experiencia" },
     { valor: "8+", texto: "Proyectos ejecutados" },
-    { valor: "3", texto: "Áreas: obra, diseño, remodelación" }
+    { valor: "3", texto: "Áreas: Presupuestos, diseño, obra" }
   ],
   acercaDeNosotros: {
     titulo: "Acerca de nosotros",
