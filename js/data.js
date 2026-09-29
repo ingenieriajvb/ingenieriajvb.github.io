@@ -10,13 +10,13 @@
 const SITE = {
   nombre: "Julian Velasco",
   titulo: "Ingeniero Civil",
-  ubicacionBase: "Cali, Valle del Cauca, Colombia",
+  ubicacionBase: "Colombia",
   email: "ingenieriajvb@gmail.com",
   telefono: "+57 320 609 3811",
   linkedin: "https://www.linkedin.com/in/tu-usuario",
   heroImagen: "assets/img/hero.jpg",
   heroAlt: "Obra civil en construcción",
-  heroEyebrow: "Cali, Valle del Cauca · Colombia",
+  heroEyebrow: "Colombia",
   heroTitulo: "Ingeniería civil, ejecutada con precisión.",
   heroDescripcion: "Este portafolio reúne los proyectos en los que he participado a lo largo de mi carrera profesional.",
   heroStats: [
@@ -139,7 +139,7 @@ const PROYECTOS = [
       "Muros de cortante nuevos",
       "Refuerzo de diafragmas de entrepiso"
     ],
-    ubicacion: { nombre: "Cali, Valle del Cauca, Colombia", lat: 3.4516, lng: -76.5320 },
+    ubicacion: { nombre: "Colombia", lat: 3.4516, lng: -76.5320 },
     portada: "assets/proyectos/placeholder-obra-3.jpg",
     galeria: ["assets/proyectos/placeholder-obra-3.jpg","assets/proyectos/placeholder-obra-3b.jpg"]
   },
@@ -160,7 +160,7 @@ const PROYECTOS = [
       "Diseño hidráulico del canal",
       "Estructuras de disipación de energía"
     ],
-    ubicacion: { nombre: "Cali, Valle del Cauca, Colombia", lat: 3.4372, lng: -76.5225 },
+    ubicacion: { nombre: "Colombia", lat: 3.4372, lng: -76.5225 },
     portada: "assets/proyectos/placeholder-diseno-3.jpg",
     galeria: ["assets/proyectos/placeholder-diseno-3.jpg"]
   }
