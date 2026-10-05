@@ -39,130 +39,155 @@ const SITE = {
 /* categoria: "obra" | "diseno"                         */
 const PROYECTOS = [
   {
-    id: "puente-vehicular-yumbo",
-    titulo: "Puente vehicular El Retiro",
+    id: "casa-campestre-popayan",
+    titulo: "Casa Campestre Popayán",
     categoria: "obra",
-    anio: "2023",
-    cliente: "Alcaldía Municipal de Yumbo",
-    rol: "Residente de obra",
-    resumen: "Construcción de puente vehicular de 42 m en concreto postensado sobre el río Yumbo.",
+    anio: "2024",
+    cliente: "Cliente particular",
+    rol: "Proyecto residencial",
+    resumen: "Diseño y ejecución de vivienda campestre con propuesta arquitectónica y obra civil adaptada al terreno.",
     descripcion: [
-      "Dirección técnica y administrativa de la construcción de un puente vehicular de dos carriles, incluyendo cimentación profunda, pilas y superestructura en concreto postensado.",
-      "El proyecto incluyó control topográfico, interventoría de calidad de concreto y coordinación con redes de servicios públicos existentes en la zona de influencia."
+      "Proyecto de vivienda campestre desarrollado con enfoque funcional, paisajístico y constructivo, ajustado a las condiciones del sitio y la topografía.",
+      "Se gestionó la ejecución de obra con coordinación de acabados, estructura, urbanismo y detalles constructivos que aportan valor al proyecto final."
     ],
     alcance: [
-      "Cimentación profunda (pilotes preexcavados)",
-      "Superestructura en concreto postensado",
-      "Obras de protección hidráulica en las márgenes del río"
+      "Diseño y obra civil residencial",
+      "Ajuste a topografía y condiciones del lote",
+      "Coordinación de acabados y detalles de construcción"
     ],
-    ubicacion: { nombre: "Yumbo, Valle del Cauca, Colombia", lat: 3.5833, lng: -76.4922 },
-    portada: "assets/proyectos/placeholder-obra-1.jpg",
-    galeria: ["assets/proyectos/placeholder-obra-1.jpg","assets/proyectos/placeholder-obra-1b.jpg","assets/proyectos/placeholder-obra-1c.jpg"]
+    ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
+    portada: "assets/proyectos/casa1-1.png",
+    galeria: [
+      "assets/proyectos/casa1-1.png",
+      "assets/proyectos/casa2-2.png",
+      "assets/proyectos/casa3-3.png",
+      "assets/proyectos/casa4-4.png",
+      "assets/proyectos/web/casa/casa-01.jpg",
+      "assets/proyectos/web/casa/casa-02.jpg"
+    ]
   },
   {
-    id: "urbanizacion-altos-del-pinar",
-    titulo: "Urbanización Altos del Pinar",
+    id: "vias-la-meseta-suarez",
+    titulo: "Diagnóstico vial Suárez - Vías La Meseta",
     categoria: "obra",
-    anio: "2022",
-    cliente: "Constructora particular",
-    rol: "Ingeniero de campo",
-    resumen: "Ejecución de redes de urbanismo y vías internas para 86 unidades de vivienda.",
-    descripcion: [
-      "Ejecución de movimiento de tierras, redes de acueducto, alcantarillado pluvial y sanitario, y pavimentación de vías internas para un proyecto de 86 viviendas.",
-      "Responsable del control de cantidades de obra, seguimiento de cronograma y verificación de especificaciones técnicas frente a diseño."
-    ],
-    alcance: [
-      "Movimiento de tierras y conformación de subrasante",
-      "Redes de acueducto y alcantarillado",
-      "Pavimento flexible en vías internas"
-    ],
-    ubicacion: { nombre: "Jamundí, Valle del Cauca, Colombia", lat: 3.2569, lng: -76.5425 },
-    portada: "assets/proyectos/placeholder-obra-2.jpg",
-    galeria: ["assets/proyectos/placeholder-obra-2.jpg","assets/proyectos/placeholder-obra-2b.jpg"]
-  },
-  {
-    id: "diseno-estructural-bodega",
-    titulo: "Diseño estructural bodega industrial",
-    categoria: "diseno",
-    anio: "2023",
-    cliente: "Grupo Logístico del Pacífico",
-    rol: "Diseñador estructural",
-    resumen: "Diseño estructural en pórticos metálicos para bodega industrial de 3.200 m².",
-    descripcion: [
-      "Diseño estructural de una bodega industrial en pórticos metálicos, incluyendo análisis sísmico, diseño de cubierta autoportante y cimentación superficial.",
-      "Modelación en software especializado, memorias de cálculo y planos estructurales para construcción."
-    ],
-    alcance: [
-      "Modelación y análisis estructural",
-      "Diseño de cimentación superficial",
-      "Planos y memorias de cálculo"
-    ],
-    ubicacion: { nombre: "Palmira, Valle del Cauca, Colombia", lat: 3.5394, lng: -76.3036 },
-    portada: "assets/proyectos/placeholder-diseno-1.jpg",
-    galeria: ["assets/proyectos/placeholder-diseno-1.jpg","assets/proyectos/placeholder-diseno-1b.jpg"]
-  },
-  {
-    id: "diseno-vial-circunvalar",
-    titulo: "Diseño geométrico vía circunvalar",
-    categoria: "diseno",
     anio: "2021",
-    cliente: "Consorcio Vial del Sur",
-    rol: "Ingeniero de diseño vial",
-    resumen: "Diseño geométrico y de pavimentos para 6,4 km de vía circunvalar.",
+    cliente: "Municipio de Suárez",
+    rol: "Diagnóstico y seguimiento vial",
+    resumen: "Estudio de diagnóstico vial para sectores rurales con análisis de condición, tramos, y necesidades de intervención.",
     descripcion: [
-      "Diseño geométrico horizontal y vertical de 6,4 km de vía circunvalar, incluyendo diseño de pavimento, señalización y obras de drenaje.",
-      "Elaboración de estudios de tránsito y coordinación con la entidad contratante para la aprobación de diseños."
+      "Se realizó el diagnóstico de vías en el corregimiento La Meseta con revisión de condiciones de servicio, deterioro superficial y necesidad de intervención.",
+      "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la red vial local."
     ],
     alcance: [
-      "Diseño geométrico horizontal y vertical",
-      "Diseño de estructura de pavimento",
-      "Estudio de drenaje y obras hidráulicas menores"
+      "Inspección técnica del tramo vial",
+      "Evaluación de condición y deterioro",
+      "Diagnóstico para intervención y priorización"
     ],
-    ubicacion: { nombre: "Buga, Valle del Cauca, Colombia", lat: 3.9006, lng: -76.2986 },
-    portada: "assets/proyectos/placeholder-diseno-2.jpg",
-    galeria: ["assets/proyectos/placeholder-diseno-2.jpg"]
+    ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
+    portada: "assets/proyectos/web/meseta/meseta-01.jpg",
+    galeria: [
+      "assets/proyectos/web/meseta/meseta-01.jpg",
+      "assets/proyectos/web/meseta/meseta-02.jpg",
+      "assets/proyectos/web/meseta/meseta-03.jpg",
+      "assets/proyectos/web/meseta/meseta-04.jpg",
+      "assets/proyectos/web/meseta/meseta-05.jpg",
+      "assets/proyectos/web/meseta/meseta-06.jpg",
+      "assets/proyectos/web/meseta/meseta-07.jpg",
+      "assets/proyectos/web/meseta/meseta-08.jpg",
+      "assets/proyectos/web/meseta/meseta-09.jpg",
+      "assets/proyectos/web/meseta/meseta-10.jpg",
+      "assets/proyectos/web/meseta/meseta-11.jpg",
+      "assets/proyectos/web/meseta/meseta-12.jpg",
+      "assets/proyectos/web/meseta/meseta-13.jpg",
+      "assets/proyectos/web/meseta/meseta-14.jpg",
+      "assets/proyectos/web/meseta/meseta-15.jpg",
+      "assets/proyectos/web/meseta/meseta-16.jpg"
+    ]
   },
   {
-    id: "reforzamiento-edificio-institucional",
-    titulo: "Reforzamiento estructural edificio institucional",
+    id: "vias-la-toma-suarez",
+    titulo: "Diagnóstico vial Suárez - Vías La Toma",
     categoria: "obra",
-    anio: "2020",
-    cliente: "Institución educativa privada",
-    rol: "Ingeniero residente",
-    resumen: "Reforzamiento sísmico de edificio institucional de 4 niveles.",
+    anio: "2021",
+    cliente: "Municipio de Suárez",
+    rol: "Diagnóstico y análisis vial",
+    resumen: "Revisión y diagnóstico de tramos viales en La Toma, con prioridad en condiciones de servicio y mantenimiento.",
     descripcion: [
-      "Ejecución de obras de reforzamiento estructural mediante encamisado de columnas y adición de muros de cortante en concreto reforzado, conforme a estudio de vulnerabilidad sísmica previo.",
-      "Coordinación de obra en funcionamiento parcial de la institución, minimizando afectación a las actividades académicas."
+      "Se evaluaron los tramos viales del sector de La Toma para determinar estado actual, afectaciones y requerimientos de intervención.",
+      "El trabajo incluyó observación técnica de la infraestructura y registro fotográfico para apoyar decisiones de rehabilitación y mantenimiento."
     ],
     alcance: [
-      "Encamisado de columnas en concreto reforzado",
-      "Muros de cortante nuevos",
-      "Refuerzo de diafragmas de entrepiso"
+      "Evaluación geométrica y funcional",
+      "Inspección de condiciones actuales",
+      "Diagnóstico para intervención vial"
     ],
-    ubicacion: { nombre: "Colombia", lat: 3.4516, lng: -76.5320 },
-    portada: "assets/proyectos/placeholder-obra-3.jpg",
-    galeria: ["assets/proyectos/placeholder-obra-3.jpg","assets/proyectos/placeholder-obra-3b.jpg"]
+    ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
+    portada: "assets/proyectos/web/toma/toma-01.jpg",
+    galeria: [
+      "assets/proyectos/web/toma/toma-01.jpg",
+      "assets/proyectos/web/toma/toma-02.jpg",
+      "assets/proyectos/web/toma/toma-03.jpg",
+      "assets/proyectos/web/toma/toma-04.jpg",
+      "assets/proyectos/web/toma/toma-05.jpg",
+      "assets/proyectos/web/toma/toma-06.jpg",
+      "assets/proyectos/web/toma/toma-07.jpg",
+      "assets/proyectos/web/toma/toma-08.jpg",
+      "assets/proyectos/web/toma/toma-09.jpg",
+      "assets/proyectos/web/toma/toma-10.jpg",
+      "assets/proyectos/web/toma/toma-11.jpg",
+      "assets/proyectos/web/toma/toma-12.jpg",
+      "assets/proyectos/web/toma/toma-13.jpg",
+      "assets/proyectos/web/toma/toma-14.jpg",
+      "assets/proyectos/web/toma/toma-15.jpg",
+      "assets/proyectos/web/toma/toma-16.jpg",
+      "assets/proyectos/web/toma/toma-17.jpg",
+      "assets/proyectos/web/toma/toma-18.jpg",
+      "assets/proyectos/web/toma/toma-19.jpg",
+      "assets/proyectos/web/toma/toma-20.jpg"
+    ]
   },
   {
-    id: "diseno-hidraulico-canal",
-    titulo: "Diseño hidráulico canal de aguas lluvias",
-    categoria: "diseno",
-    anio: "2019",
-    cliente: "EMCALI",
-    rol: "Ingeniero hidráulico",
-    resumen: "Diseño hidráulico de canal abierto para manejo de aguas lluvias en zona urbana.",
+    id: "vias-pureto-suarez",
+    titulo: "Diagnóstico vial Suárez - Vías Pureto",
+    categoria: "obra",
+    anio: "2021",
+    cliente: "Municipio de Suárez",
+    rol: "Diagnóstico vial",
+    resumen: "Inspección técnica de vías en el sector Puerto, con análisis de afectaciones y requerimientos de intervención.",
     descripcion: [
-      "Modelación hidráulica e hidrológica para el diseño de un canal abierto de 1,2 km destinado al manejo de aguas lluvias en una zona urbana con antecedentes de inundación.",
-      "Definición de sección de canal, obras de disipación de energía y estructuras de entrega."
+      "Se adelantó un diagnóstico técnico para tramos viales del sector Pureto, revisando su condición física, operación y necesidad de mejoras.",
+      "La información recopilada sirvió de base para priorizar intervenciones y apoyar la gestión del mantenimiento vial."
     ],
     alcance: [
-      "Modelación hidrológica de la cuenca aportante",
-      "Diseño hidráulico del canal",
-      "Estructuras de disipación de energía"
+      "Diagnóstico técnico del tramo",
+      "Registro fotográfico y revisión visual",
+      "Base para intervención y mantenimiento"
     ],
-    ubicacion: { nombre: "Colombia", lat: 3.4372, lng: -76.5225 },
-    portada: "assets/proyectos/placeholder-diseno-3.jpg",
-    galeria: ["assets/proyectos/placeholder-diseno-3.jpg"]
+    ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
+    portada: "assets/proyectos/web/pureto/pureto-01.jpg",
+    galeria: [
+      "assets/proyectos/web/pureto/pureto-01.jpg",
+      "assets/proyectos/web/pureto/pureto-02.jpg",
+      "assets/proyectos/web/pureto/pureto-03.jpg",
+      "assets/proyectos/web/pureto/pureto-04.jpg",
+      "assets/proyectos/web/pureto/pureto-05.jpg",
+      "assets/proyectos/web/pureto/pureto-06.jpg",
+      "assets/proyectos/web/pureto/pureto-07.jpg",
+      "assets/proyectos/web/pureto/pureto-08.jpg",
+      "assets/proyectos/web/pureto/pureto-09.jpg",
+      "assets/proyectos/web/pureto/pureto-10.jpg",
+      "assets/proyectos/web/pureto/pureto-11.jpg",
+      "assets/proyectos/web/pureto/pureto-12.jpg",
+      "assets/proyectos/web/pureto/pureto-13.jpg",
+      "assets/proyectos/web/pureto/pureto-14.jpg",
+      "assets/proyectos/web/pureto/pureto-15.jpg",
+      "assets/proyectos/web/pureto/pureto-16.jpg",
+      "assets/proyectos/web/pureto/pureto-17.jpg",
+      "assets/proyectos/web/pureto/pureto-18.jpg",
+      "assets/proyectos/web/pureto/pureto-19.jpg",
+      "assets/proyectos/web/pureto/pureto-20.jpg",
+      "assets/proyectos/web/pureto/pureto-21.jpg"
+    ]
   }
 ];
 
