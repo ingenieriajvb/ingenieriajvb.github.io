@@ -125,7 +125,7 @@ function getMediaSource(media, fallback = "") {
 
 function mediaToMarkup(item, alt = "") {
   if (typeof item === "string") {
-    return `<img src="${item}" alt="${alt}" loading="lazy">`;
+    return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${alt}"><img src="${item}" alt="${alt}" loading="lazy"></button>`;
   }
 
   if (item && typeof item === "object") {
@@ -134,7 +134,8 @@ function mediaToMarkup(item, alt = "") {
       const poster = item.poster ? ` poster="${item.poster}"` : "";
       return `<video controls preload="metadata"${poster}><source src="${src}" type="${item.mime || "video/mp4"}"></video>`;
     }
-    return `<img src="${src}" alt="${item.alt || alt}" loading="lazy">`;
+    const imageAlt = item.alt || alt;
+    return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${imageAlt}"><img src="${src}" alt="${imageAlt}" loading="lazy"></button>`;
   }
 
   return "";
@@ -224,6 +225,7 @@ function initProyectoDetalle() {
   const gal = document.getElementById("pd-gallery");
   const mediaItems = getProjectMediaItems(p);
   gal.innerHTML = mediaItems.map(item => mediaToMarkup(item, p.titulo)).join("");
+  initProjectImageViewer(gal, p.titulo);
 
   // Siguiente proyecto
   const idx = PROYECTOS.findIndex(x => x.id === p.id);
@@ -235,6 +237,29 @@ function initProyectoDetalle() {
   }
 }
 
+function initProjectImageViewer(gallery, projectTitle) {
+  const viewer = document.getElementById("project-image-viewer");
+  const viewerImage = document.getElementById("project-image-viewer-image");
+  const caption = document.getElementById("project-image-viewer-caption");
+  const closeButton = viewer.querySelector(".image-viewer-close");
+
+  gallery.addEventListener("click", event => {
+    const button = event.target.closest(".gallery-image-button");
+    if (!button) return;
+
+    const image = button.querySelector("img");
+    const images = [...gallery.querySelectorAll(".gallery-image-button")];
+    viewerImage.src = image.src;
+    viewerImage.alt = image.alt;
+    caption.textContent = `${projectTitle} — Foto ${images.indexOf(button) + 1} de ${images.length}`;
+    viewer.showModal();
+  });
+
+  closeButton.addEventListener("click", () => viewer.close());
+  viewer.addEventListener("click", event => {
+    if (event.target === viewer) viewer.close();
+  });
+}
 /* -------------------- Página: certificados.html -------------------- */
 function initCertificados() {
   const estudiosEl = document.getElementById("cert-estudios");
