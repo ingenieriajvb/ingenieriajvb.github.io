@@ -56,14 +56,14 @@ const PROYECTOS = [
       "Coordinación de acabados y detalles de construcción"
     ],
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
-    portada: "assets/proyectos/casa1-1.png",
+    portada: "assets/proyectos/web/casa-campestre/casa-campestre-01.jpg",
     galeria: [
-      "assets/proyectos/casa1-1.png",
-      "assets/proyectos/casa2-2.png",
-      "assets/proyectos/casa3-3.png",
-      "assets/proyectos/casa4-4.png",
-      "assets/proyectos/web/casa/casa-01.jpg",
-      "assets/proyectos/web/casa/casa-02.jpg"
+      "assets/proyectos/web/casa-campestre/casa-campestre-01.jpg",
+      "assets/proyectos/web/casa-campestre/casa-campestre-02.jpg",
+      "assets/proyectos/web/casa-campestre/casa-campestre-03.jpg",
+      "assets/proyectos/web/casa-campestre/casa-campestre-04.jpg",
+      "assets/proyectos/web/casa-campestre/casa-campestre-05.jpg",
+      "assets/proyectos/web/casa-campestre/casa-campestre-06.jpg"
     ]
   },
   {
@@ -187,6 +187,208 @@ const PROYECTOS = [
       "assets/proyectos/web/pureto/pureto-19.jpg",
       "assets/proyectos/web/pureto/pureto-20.jpg",
       "assets/proyectos/web/pureto/pureto-21.jpg"
+    ]
+  },
+  {
+    id: "remodelacion-rama-judicial-cauca",
+    titulo: "Remodelación de instalaciones de la Rama Judicial",
+    categoria: "obra",
+    anio: "2018–2019",
+    cliente: "Rama Judicial",
+    rol: "Remodelación de instalaciones",
+    resumen: "Registro de la remodelación de sedes judiciales en Corinto, Santander de Quilichao y Popayán.",
+    descripcion: [
+      "Registro fotográfico de las obras de remodelación realizadas en instalaciones de la Rama Judicial en el Cauca."
+    ],
+    alcance: [
+      "Remodelación de instalaciones",
+      "Registro fotográfico de obra"
+    ],
+    ubicacion: { nombre: "Corinto, Santander de Quilichao y Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
+    portada: "assets/proyectos/web/rama-judicial/rama-judicial-01.jpg",
+    galeria: [
+      "assets/proyectos/web/rama-judicial/rama-judicial-01.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-02.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-03.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-04.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-05.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-06.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-07.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-08.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-09.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-10.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-11.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-12.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-13.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-14.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-15.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-16.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-17.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-18.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-19.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-20.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-21.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-22.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-23.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-24.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-25.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-26.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-27.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-28.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-29.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-30.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-31.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-32.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-33.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-34.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-35.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-36.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-37.jpg",
+      "assets/proyectos/web/rama-judicial/rama-judicial-38.jpg"
+    ]
+  },
+  {
+    id: "remodelacion-banos-popayan",
+    titulo: "Remodelación de baños en conjunto residencial",
+    categoria: "obra",
+    anio: "2023",
+    cliente: "Conjunto residencial",
+    rol: "Remodelación",
+    resumen: "Remodelación de baños en un conjunto residencial de Popayán.",
+    descripcion: [
+      "Registro fotográfico del proceso de remodelación de los baños del conjunto residencial."
+    ],
+    alcance: [
+      "Remodelación de baños",
+      "Registro fotográfico de obra"
+    ],
+    ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
+    portada: "assets/proyectos/web/remodelacion-banos/remodelacion-banos-01.jpg",
+    galeria: [
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-01.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-02.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-03.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-04.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-05.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-06.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-07.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-08.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-09.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-10.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-11.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-12.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-13.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-14.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-15.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-16.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-17.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-18.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-19.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-20.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-21.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-22.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-23.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-24.jpg",
+      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-25.jpg"
+    ]
+  },
+  {
+    id: "remodelacion-casa-centro-popayan",
+    titulo: "Remodelación de casa en el centro histórico de Popayán",
+    categoria: "obra",
+    anio: "s. f.",
+    cliente: "Cliente particular",
+    rol: "Remodelación residencial",
+    resumen: "Remodelación de una vivienda en el centro histórico de Popayán.",
+    descripcion: [
+      "Registro visual del proyecto de remodelación de una casa ubicada en el centro histórico de Popayán."
+    ],
+    alcance: [
+      "Remodelación residencial",
+      "Registro fotográfico del proyecto"
+    ],
+    ubicacion: { nombre: "Centro histórico de Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
+    portada: "assets/proyectos/web/casa-centro/casa-centro-01.jpg",
+    galeria: [
+      "assets/proyectos/web/casa-centro/casa-centro-01.jpg",
+      "assets/proyectos/web/casa-centro/casa-centro-02.jpg",
+      "assets/proyectos/web/casa-centro/casa-centro-03.jpg",
+      "assets/proyectos/web/casa-centro/casa-centro-04.jpg",
+      "assets/proyectos/web/casa-centro/casa-centro-05.jpg",
+      "assets/proyectos/web/casa-centro/casa-centro-06.jpg"
+    ]
+  },
+  {
+    id: "casa-grande-resguardo-honduras",
+    titulo: "Casa Grande del Resguardo Indígena de Honduras",
+    categoria: "obra",
+    anio: "2024",
+    cliente: "Cabildo Indígena de Honduras",
+    rol: "Proyecto de infraestructura",
+    resumen: "Proyecto de Casa Grande para el Cabildo Indígena de Honduras, en Morales, Cauca.",
+    descripcion: [
+      "Registro fotográfico y audiovisual de la Casa Grande del Resguardo Indígena de Honduras."
+    ],
+    alcance: [
+      "Infraestructura comunitaria",
+      "Registro fotográfico y audiovisual"
+    ],
+    ubicacion: { nombre: "Resguardo de Honduras, Morales, Cauca", lat: 2.7549, lng: -76.6273 },
+    portada: "assets/proyectos/web/casa-grande/casa-grande-01.jpg",
+    galeria: [
+      "assets/proyectos/web/casa-grande/casa-grande-01.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-02.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-03.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-04.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-05.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-06.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-07.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-08.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-09.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-10.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-11.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-12.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-13.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-14.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-15.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-16.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-17.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-18.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-19.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-20.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-21.jpg",
+      "assets/proyectos/web/casa-grande/casa-grande-22.jpg",
+      {
+        type: "video",
+        src: "assets/proyectos/web/casa-grande/casa-grande-resguardo.mp4",
+        mime: "video/mp4",
+        poster: "assets/proyectos/web/casa-grande/casa-grande-01.jpg"
+      }
+    ]
+  },
+  {
+    id: "planta-tratamiento-agua-silvia",
+    titulo: "Planta de tratamiento de agua potable de Silvia",
+    categoria: "obra",
+    anio: "2024",
+    cliente: "Proyecto de agua potable",
+    rol: "Infraestructura hidráulica",
+    resumen: "Proyecto de planta de tratamiento de agua potable en Silvia, Cauca.",
+    descripcion: [
+      "Registro fotográfico del proyecto de la planta de tratamiento de agua potable de Silvia."
+    ],
+    alcance: [
+      "Infraestructura para tratamiento de agua potable",
+      "Registro fotográfico del proyecto"
+    ],
+    ubicacion: { nombre: "Silvia, Cauca, Colombia", lat: 2.6115, lng: -76.3826 },
+    portada: "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-01.jpg",
+    galeria: [
+      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-01.jpg",
+      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-02.jpg",
+      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-03.jpg",
+      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-04.jpg",
+      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-05.jpg"
     ]
   }
 ];

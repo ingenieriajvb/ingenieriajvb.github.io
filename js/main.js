@@ -142,9 +142,16 @@ function mediaToMarkup(item, alt = "") {
 }
 
 function getProjectMediaItems(p) {
-  if (Array.isArray(p.media) && p.media.length) return p.media;
-  if (Array.isArray(p.galeria) && p.galeria.length) return p.galeria;
-  return [p.portada];
+  const media = Array.isArray(p.media) && p.media.length
+    ? p.media
+    : Array.isArray(p.galeria) && p.galeria.length
+      ? p.galeria
+      : [p.portada];
+  const isVideo = item => {
+    const src = typeof item === "string" ? item : item?.src || item?.url || "";
+    return item?.type === "video" || item?.kind === "video" || /\.(mp4|m4v|mov|webm)(?:[?#]|$)/i.test(src);
+  };
+  return [...media.filter(item => !isVideo(item)), ...media.filter(isVideo)];
 }
 
 /* -------------------- Home: proyectos destacados -------------------- */
