@@ -174,7 +174,7 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     kmz: "assets/kmz/vias-pureto.kmz",
-    portada: "assets/proyectos/web/pureto/pureto-01.jpg",
+    portada: "portfolio-site/Diagnostico vial Suarez - Cauca/Vias Pureto/Vehiculo de trabajo con perdida de traccion por mal estado de la via.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias Pureto", [
       "Equipo de trabajo CELSIA Valle.jpg",
       "Equipo de trabajo realizando toma de puntos con GPS de alta precisión.jpg",
