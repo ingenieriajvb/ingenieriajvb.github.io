@@ -260,7 +260,7 @@ const PROYECTOS = [
       "Registro fotográfico de obra"
     ],
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
-    portada: "assets/proyectos/web/remodelacion-banos/remodelacion-banos-01.jpg",
+    portada: "portfolio-site/Remodelación baños conjunto cerrado  Popayán/Baño 2 terminado.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Remodelación baños conjunto cerrado  Popayán", [
       "20231207_184508.jpg",
       "20231207_184535.jpg",
