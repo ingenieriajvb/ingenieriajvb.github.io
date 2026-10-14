@@ -209,7 +209,7 @@ const PROYECTOS = [
       "Registro fotográfico de obra"
     ],
     ubicacion: { nombre: "Corinto, Santander de Quilichao y Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
-    portada: "assets/proyectos/web/rama-judicial/rama-judicial-01.jpg",
+    portada: "portfolio-site/Remodelación Instalaciones Rama Judicial Corinto - Santander de Quilichao - Popayán/Restauración cubiertas, cerrajeria y pintura plazoleta - Palacio Nacional.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Remodelación Instalaciones Rama Judicial Corinto - Santander de Quilichao - Popayán", [
       "Arquitectura clasica italiana combinada con estructura liviana - Palacio Nacional.jpg",
       "Cielo raso terminado - Palacio Nacional.jpg",
