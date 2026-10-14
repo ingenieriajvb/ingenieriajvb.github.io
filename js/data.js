@@ -300,7 +300,7 @@ const PROYECTOS = [
       "Registro fotográfico del proyecto"
     ],
     ubicacion: { nombre: "Centro histórico de Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
-    portada: "assets/proyectos/web/casa-centro/casa-centro-01.jpg",
+    portada: "portfolio-site/Remodelacion casa centro historico Popayán/Obra terminada 2.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Remodelacion casa centro historico Popayán", [
       "1.png",
       "2.png",
