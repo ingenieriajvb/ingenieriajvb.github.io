@@ -332,21 +332,41 @@ function initProjectImageViewer(gallery, projectTitle) {
   const viewerImage = document.getElementById("project-image-viewer-image");
   const caption = document.getElementById("project-image-viewer-caption");
   const closeButton = viewer.querySelector(".image-viewer-close");
+  const previousButton = viewer.querySelector(".image-viewer-previous");
+  const nextButton = viewer.querySelector(".image-viewer-next");
+  let images = [];
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = (index + images.length) % images.length;
+    const image = images[currentIndex].querySelector("img");
+    viewerImage.src = image.src;
+    viewerImage.alt = image.alt;
+    caption.textContent = image.alt && image.alt !== projectTitle
+      ? image.alt
+      : `${projectTitle} — Foto ${currentIndex + 1} de ${images.length}`;
+    const canNavigate = images.length > 1;
+    previousButton.disabled = !canNavigate;
+    nextButton.disabled = !canNavigate;
+  }
 
   gallery.addEventListener("click", event => {
     const button = event.target.closest(".gallery-image-button");
     if (!button) return;
 
-    const image = button.querySelector("img");
-    const images = [...gallery.querySelectorAll(".gallery-image-button")];
-    viewerImage.src = image.src;
-    viewerImage.alt = image.alt;
-    caption.textContent = image.alt && image.alt !== projectTitle
-      ? image.alt
-      : `${projectTitle} — Foto ${images.indexOf(button) + 1} de ${images.length}`;
+    images = [...gallery.querySelectorAll(".gallery-image-button")];
+    showImage(images.indexOf(button));
     viewer.showModal();
   });
 
+  previousButton.addEventListener("click", () => showImage(currentIndex - 1));
+  nextButton.addEventListener("click", () => showImage(currentIndex + 1));
+  viewer.addEventListener("keydown", event => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      showImage(currentIndex + (event.key === "ArrowRight" ? 1 : -1));
+    }
+  });
   closeButton.addEventListener("click", () => viewer.close());
   viewer.addEventListener("click", event => {
     if (event.target === viewer) viewer.close();

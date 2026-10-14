@@ -81,7 +81,11 @@
     <div class="gallery" id="pd-gallery"></div>
     <dialog class="image-viewer" id="project-image-viewer" aria-label="Imagen ampliada">
       <button class="image-viewer-close" type="button" aria-label="Cerrar imagen ampliada">×</button>
-      <img id="project-image-viewer-image" src="" alt="">
+      <div class="image-viewer-stage">
+        <button class="image-viewer-nav image-viewer-previous" type="button" aria-label="Ver imagen anterior">‹</button>
+        <img id="project-image-viewer-image" src="" alt="">
+        <button class="image-viewer-nav image-viewer-next" type="button" aria-label="Ver imagen siguiente">›</button>
+      </div>
       <p class="image-viewer-caption" id="project-image-viewer-caption"></p>
     </dialog>
 
