@@ -93,13 +93,12 @@ function categoriaLabel(cat) {
   return cat === "obra" ? "Obra" : "Diseño";
 }
 
-function sheetCardHTML(p, index) {
+function sheetCardHTML(p) {
   const portada = getMediaSource(p.portada);
   return `
     <a class="sheet-card" href="proyecto.html?id=${p.id}">
       <div class="sheet-media">
         <span class="sheet-tag">${categoriaLabel(p.categoria)}</span>
-        <span class="sheet-num mono">HOJA ${String(index + 1).padStart(2, "0")}</span>
         <img src="${portada}" alt="${p.titulo}" loading="lazy">
       </div>
       <div class="sheet-body">
@@ -158,7 +157,7 @@ function initHomeFeatured() {
   const el = document.getElementById("featured-projects");
   if (!el) return;
   const destacados = PROYECTOS.slice(0, 3);
-  el.innerHTML = destacados.map((p, i) => sheetCardHTML(p, i)).join("");
+  el.innerHTML = destacados.map(sheetCardHTML).join("");
 }
 
 /* -------------------- Página: proyectos.html -------------------- */
@@ -174,7 +173,7 @@ function initProyectosGrid() {
   function render() {
     const lista = filtro === "todos" ? PROYECTOS : PROYECTOS.filter(p => p.categoria === filtro);
     el.innerHTML = lista.length
-      ? lista.map((p, i) => sheetCardHTML(p, i)).join("")
+      ? lista.map(sheetCardHTML).join("")
       : `<p style="color:var(--concrete)">Aún no hay proyectos en esta categoría.</p>`;
     buttons.forEach(b => b.classList.toggle("active", b.dataset.filter === filtro));
   }

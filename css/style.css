@@ -437,14 +437,6 @@ section{padding:96px 0;}
   text-transform:uppercase;
   padding:5px 9px;
 }
-.sheet-num{
-  position:absolute;bottom:12px;right:12px;
-  font-family:var(--font-mono);
-  font-size:.7rem;
-  color:var(--white);
-  background:rgba(10,46,54,.85);
-  padding:4px 8px;
-}
 .sheet-body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column;}
 .sheet-body h3{font-size:1.15rem;margin-bottom:8px;}
 .sheet-body p{color:var(--ink-soft);font-size:.92rem;margin:0 0 16px;flex:1;}
