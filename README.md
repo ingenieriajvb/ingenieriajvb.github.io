@@ -9,15 +9,14 @@ portfolio-site/
 ├── index.html            Página de inicio (hero + destacados)
 ├── proyectos.html         Listado de proyectos con filtro Obra / Diseños
 ├── proyecto.html          Plantilla de detalle (una sola página para todos los proyectos)
-├── certificados.html      Certificados de estudios y laborales (pestañas)
 ├── contacto.html          Referencias laborales + contacto directo
 ├── css/style.css          Todos los estilos
-├── js/data.js             ⭐ AQUÍ EDITAS TU CONTENIDO (proyectos, certificados, referencias)
+├── js/data.js             ⭐ AQUÍ EDITAS TU CONTENIDO (proyectos y referencias)
 ├── js/main.js             Lógica del sitio (no es necesario tocarlo)
-└── assets/                Imágenes (reemplaza las de ejemplo por las tuyas)
+└── assets/                Imágenes del portafolio
     ├── img/hero.jpg
     ├── proyectos/
-    └── certificados/
+    └── kmz/                Recorridos GPS de proyectos
 ```
 
 ## 1. Cómo editar el contenido (sin tocar HTML)
@@ -32,20 +31,22 @@ cualquier editor (incluso el editor de archivos de GitHub) y edita:
   - `ubicacion.lat` / `ubicacion.lng`: coordenadas GPS del proyecto (para el mapa).
     Puedes obtenerlas dando clic derecho en Google Maps → "¿Qué hay aquí?".
   - `portada` / `galeria`: rutas a tus imágenes dentro de `assets/proyectos/`.
-- **`CERTIFICADOS`**: dos listas, `estudios` y `laborales`.
--- **`REFERENCIAS`**: tus jefes/empresas de contacto. **Importante**: pide
+  - `kmz` (opcional): ruta a un archivo KMZ; se muestra como globo 3D interactivo en el detalle del proyecto.
+- **`REFERENCIAS`**: tus jefes/empresas de contacto. **Importante**: pide
   autorización antes de publicar el correo/teléfono de otra persona.
 
 No necesitas saber programar para editar este archivo — solo respeta las comillas
 `" "` y las comas entre campos.
+
+El visor GPS usa CesiumJS y un mapa base de OpenStreetMap; ambos se cargan por
+internet únicamente en los proyectos que tienen un archivo `kmz`.
 
 ## 2. Cómo reemplazar las imágenes de ejemplo
 
 Las imágenes actuales son marcadores de posición con estilo "plano técnico" para que
 puedas ver el diseño terminado. Reemplázalas por tus fotos reales:
 
-1. Sube tus fotos a `assets/proyectos/` (portadas y galería) y `assets/certificados/`
-   (fotos o escaneos de tus certificados).
+1. Sube tus fotos a `assets/proyectos/` (portadas y galería).
 2. Usa nombres de archivo sin espacios ni tildes (ej. `puente-yumbo-01.jpg`).
 3. Actualiza las rutas correspondientes en `js/data.js`.
 4. Recomendado: fotos entre 1200–2000 px de ancho, comprimidas (JPG calidad 80%)

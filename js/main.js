@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initHomeFeatured();
   initProyectosGrid();
   initProyectoDetalle();
-  initCertificados();
   initContacto();
 });
 
@@ -134,7 +133,7 @@ function mediaToMarkup(item, alt = "") {
       const poster = item.poster ? ` poster="${item.poster}"` : "";
       return `<video controls preload="metadata"${poster}><source src="${src}" type="${item.mime || "video/mp4"}"></video>`;
     }
-    const imageAlt = item.alt || alt;
+    const imageAlt = item.alt || item.caption || alt;
     return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${imageAlt}"><img src="${src}" alt="${imageAlt}" loading="lazy"></button>`;
   }
 
@@ -229,6 +228,8 @@ function initProyectoDetalle() {
   document.getElementById("pd-map-link").href =
     `https://www.google.com/maps/search/?api=1&query=${p.ubicacion.lat},${p.ubicacion.lng}`;
 
+  initProjectRoute(p);
+
   const gal = document.getElementById("pd-gallery");
   const mediaItems = getProjectMediaItems(p);
   gal.innerHTML = mediaItems.map(item => mediaToMarkup(item, p.titulo)).join("");
@@ -242,6 +243,88 @@ function initProyectoDetalle() {
     nextEl.href = `proyecto.html?id=${siguiente.id}`;
     nextEl.querySelector(".next-title").textContent = siguiente.titulo;
   }
+}
+
+function initProjectRoute(project) {
+  const section = document.getElementById("pd-route-section");
+  if (!section || !project.kmz) return;
+
+  const status = document.getElementById("pd-route-status");
+  const viewerContainer = document.getElementById("pd-route-viewer");
+  const downloadLink = document.getElementById("pd-kmz-download");
+  const cesiumBaseUrl = "https://cesium.com/downloads/cesiumjs/releases/1.130/Build/Cesium/";
+
+  section.hidden = false;
+  status.textContent = "Cargando el recorrido GPS…";
+  downloadLink.href = project.kmz;
+
+  if (!document.querySelector("[data-cesium-styles]")) {
+    const styles = document.createElement("link");
+    styles.rel = "stylesheet";
+    styles.href = `${cesiumBaseUrl}Widgets/widgets.css`;
+    styles.dataset.cesiumStyles = "";
+    document.head.append(styles);
+  }
+
+  function createRouteViewer() {
+    if (!window.Cesium) {
+      status.textContent = "No se pudo cargar el visor 3D. Verifica tu conexión a internet e inténtalo de nuevo.";
+      return;
+    }
+
+    let viewer;
+    try {
+      viewer = new Cesium.Viewer(viewerContainer, {
+        animation: false,
+        baseLayerPicker: false,
+        baseLayer: new Cesium.ImageryLayer(new Cesium.OpenStreetMapImageryProvider({
+          url: "https://tile.openstreetmap.org/"
+        })),
+        fullscreenButton: false,
+        geocoder: false,
+        homeButton: false,
+        infoBox: false,
+        navigationHelpButton: false,
+        sceneModePicker: false,
+        selectionIndicator: false,
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(),
+        timeline: false
+      });
+    } catch (error) {
+      status.textContent = "No fue posible iniciar el globo 3D en este navegador.";
+      console.error("No se pudo iniciar el visor CesiumJS.", error);
+      return;
+    }
+
+    Cesium.KmlDataSource.load(project.kmz, {
+      camera: viewer.scene.camera,
+      canvas: viewer.scene.canvas,
+      clampToGround: true
+    }).then(dataSource => viewer.dataSources.add(dataSource))
+      .then(dataSource => viewer.flyTo(dataSource, { duration: 0 }))
+      .then(() => {
+        status.textContent = "Recorrido cargado. Arrastra para mover la vista; usa la rueda para acercar o alejar.";
+      })
+      .catch(error => {
+        status.textContent = "No se pudo cargar el recorrido GPS. Puedes descargar el archivo KMZ para abrirlo en Google Earth.";
+        console.error("No se pudo cargar el KMZ del proyecto.", error);
+      });
+  }
+
+  if (window.Cesium) {
+    createRouteViewer();
+    return;
+  }
+
+  window.CESIUM_BASE_URL = cesiumBaseUrl;
+  const script = document.createElement("script");
+  script.src = `${cesiumBaseUrl}Cesium.js`;
+  script.async = true;
+  script.addEventListener("load", createRouteViewer, { once: true });
+  script.addEventListener("error", () => {
+    status.textContent = "No se pudo descargar el visor 3D. Verifica tu conexión a internet e inténtalo de nuevo.";
+  }, { once: true });
+  document.head.append(script);
 }
 
 function initProjectImageViewer(gallery, projectTitle) {
@@ -258,46 +341,15 @@ function initProjectImageViewer(gallery, projectTitle) {
     const images = [...gallery.querySelectorAll(".gallery-image-button")];
     viewerImage.src = image.src;
     viewerImage.alt = image.alt;
-    caption.textContent = `${projectTitle} — Foto ${images.indexOf(button) + 1} de ${images.length}`;
+    caption.textContent = image.alt && image.alt !== projectTitle
+      ? image.alt
+      : `${projectTitle} — Foto ${images.indexOf(button) + 1} de ${images.length}`;
     viewer.showModal();
   });
 
   closeButton.addEventListener("click", () => viewer.close());
   viewer.addEventListener("click", event => {
     if (event.target === viewer) viewer.close();
-  });
-}
-/* -------------------- Página: certificados.html -------------------- */
-function initCertificados() {
-  const estudiosEl = document.getElementById("cert-estudios");
-  const laboralesEl = document.getElementById("cert-laborales");
-  if (!estudiosEl && !laboralesEl) return;
-
-  function certCard(c) {
-    return `
-      <div class="cert-card">
-        <div class="cert-thumb"><img src="${c.imagen}" alt="${c.titulo}" loading="lazy"></div>
-        <div class="cert-info">
-          <h4>${c.titulo}</h4>
-          <p>${c.institucion}</p>
-          <span class="cert-year mono">${c.anio}</span>
-          <a class="cert-view" href="${c.archivo}" target="_blank" rel="noopener">Ver certificado ↗</a>
-        </div>
-      </div>`;
-  }
-
-  if (estudiosEl) estudiosEl.innerHTML = CERTIFICADOS.estudios.map(certCard).join("");
-  if (laboralesEl) laboralesEl.innerHTML = CERTIFICADOS.laborales.map(certCard).join("");
-
-  const tabBtns = document.querySelectorAll(".cert-tab-btn");
-  const panels = document.querySelectorAll(".cert-panel");
-  tabBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      tabBtns.forEach(b => b.classList.remove("active"));
-      panels.forEach(p => p.classList.remove("active"));
-      btn.classList.add("active");
-      document.getElementById(btn.dataset.target).classList.add("active");
-    });
   });
 }
 
@@ -321,4 +373,3 @@ function initContacto() {
     linkedinEl.href = SITE.linkedin || "#";
   }
 }
-

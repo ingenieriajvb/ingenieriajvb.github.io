@@ -1,10 +1,10 @@
 /* ============================================================
    DATOS DEL SITIO
    -----------------------------------------------------------
-   Edita este archivo para actualizar proyectos, certificados
-   y referencias. No necesitas tocar el HTML ni el CSS.
+   Edita este archivo para actualizar proyectos y referencias.
+   No necesitas tocar el HTML ni el CSS.
    Reemplaza las rutas de imagen por las tuyas dentro de
-   /assets/proyectos y /assets/certificados.
+   /assets/proyectos.
    ============================================================ */
 
 const SITE = {
@@ -14,15 +14,15 @@ const SITE = {
   email: "ingenieriajvb@gmail.com",
   telefono: "+57 320 609 3811",
   linkedin: "https://www.linkedin.com/in/tu-usuario",
-  heroImagen: "assets/img/hero.jpg",
-  heroAlt: "Obra civil en construcción",
+  heroImagen: "assets/proyectos/casa1-1.png",
+  heroAlt: "Casa campestre en Popayán",
   heroEyebrow: "Colombia",
   heroTitulo: "Ingeniería civil, ejecutada con precisión.",
   heroDescripcion: "Este portafolio reúne los proyectos en los que he participado a lo largo de mi carrera profesional.",
   heroStats: [
     { valor: "8+", texto: "Años de experiencia" },
-    { valor: "8+", texto: "Proyectos ejecutados" },
-    { valor: "3", texto: "Áreas: Presupuestos, diseño, obra" }
+    { valor: "4", texto: "Proyectos destacados" },
+    { valor: "3", texto: "Áreas: obra, vial y residencial" }
   ],
   acercaDeNosotros: {
     titulo: "Acerca de nosotros",
@@ -37,6 +37,13 @@ const SITE = {
 
 /* -------------------- PROYECTOS -------------------- */
 /* categoria: "obra" | "diseno"                         */
+function fotosDeCarpeta(carpeta, nombres) {
+  return nombres.map(nombre => ({
+    src: `${carpeta}/${nombre}`,
+    alt: nombre.replace(/\.[^.]+$/, "")
+  }));
+}
+
 const PROYECTOS = [
   {
     id: "casa-campestre-popayan",
@@ -57,14 +64,17 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "assets/proyectos/web/casa-campestre/casa-campestre-01.jpg",
-    galeria: [
-      "assets/proyectos/web/casa-campestre/casa-campestre-01.jpg",
-      "assets/proyectos/web/casa-campestre/casa-campestre-02.jpg",
-      "assets/proyectos/web/casa-campestre/casa-campestre-03.jpg",
-      "assets/proyectos/web/casa-campestre/casa-campestre-04.jpg",
-      "assets/proyectos/web/casa-campestre/casa-campestre-05.jpg",
-      "assets/proyectos/web/casa-campestre/casa-campestre-06.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Casa Campestre Popayán", [
+      "Cubierta.png",
+      "Fachadas y Cortes.png",
+      "Lote.jpeg",
+      "Plano Electrico.png",
+      "Plano Hidraulico.png",
+      "Plano Sanitario Primer Piso.png",
+      "Plano Sanitario segundo piso.png",
+      "Planta Primer Piso.png",
+      "Planta Segundo Piso.png"
+    ])
   },
   {
     id: "vias-la-meseta-suarez",
@@ -85,24 +95,25 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "assets/proyectos/web/meseta/meseta-01.jpg",
-    galeria: [
-      "assets/proyectos/web/meseta/meseta-01.jpg",
-      "assets/proyectos/web/meseta/meseta-02.jpg",
-      "assets/proyectos/web/meseta/meseta-03.jpg",
-      "assets/proyectos/web/meseta/meseta-04.jpg",
-      "assets/proyectos/web/meseta/meseta-05.jpg",
-      "assets/proyectos/web/meseta/meseta-06.jpg",
-      "assets/proyectos/web/meseta/meseta-07.jpg",
-      "assets/proyectos/web/meseta/meseta-08.jpg",
-      "assets/proyectos/web/meseta/meseta-09.jpg",
-      "assets/proyectos/web/meseta/meseta-10.jpg",
-      "assets/proyectos/web/meseta/meseta-11.jpg",
-      "assets/proyectos/web/meseta/meseta-12.jpg",
-      "assets/proyectos/web/meseta/meseta-13.jpg",
-      "assets/proyectos/web/meseta/meseta-14.jpg",
-      "assets/proyectos/web/meseta/meseta-15.jpg",
-      "assets/proyectos/web/meseta/meseta-16.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias la Meseta", [
+      "Canoas para trasporte de comercio local por via fluvial.jpg",
+      "Embalse la Salvajina - Suarez.jpg",
+      "Embalse la Salvajina vista desde la Meseta.jpg",
+      "Embarcadero Buenavista.jpg",
+      "Embarcadero el Arenal.jpg",
+      "Equipo de trabajo diagnostico vial.jpg",
+      "Montañas la Meseta vista amplia.jpg",
+      "Montañas la Meseta.jpg",
+      "Paso de agua en la via donde se propone batea en concreto.jpg",
+      "Propuesta de ubicacion de alcantarilla.jpg",
+      "Propuesta de ubicación de obra de arte ( alcantarilla).jpg",
+      "Puente artesanal en madera donde se propone ubicación de  obra de arte.jpg",
+      "Punto donde  se propone alcantarilla.jpg",
+      "Total de tramos recorridos para mejora en la vereda de la  Meseta - Google Earth.jpg",
+      "Ubicacion de obras de arte y propuesta de mejoras inmediatas por el alto deterioro.jpg",
+      "Vehiculo de trabajo en vias con malas condiciones.jpg",
+      "Vias con propuesta de placa huella por condiciones actuales - la Meseta.jpg"
+    ])
   },
   {
     id: "vias-la-toma-suarez",
@@ -123,28 +134,26 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "assets/proyectos/web/toma/toma-01.jpg",
-    galeria: [
-      "assets/proyectos/web/toma/toma-01.jpg",
-      "assets/proyectos/web/toma/toma-02.jpg",
-      "assets/proyectos/web/toma/toma-03.jpg",
-      "assets/proyectos/web/toma/toma-04.jpg",
-      "assets/proyectos/web/toma/toma-05.jpg",
-      "assets/proyectos/web/toma/toma-06.jpg",
-      "assets/proyectos/web/toma/toma-07.jpg",
-      "assets/proyectos/web/toma/toma-08.jpg",
-      "assets/proyectos/web/toma/toma-09.jpg",
-      "assets/proyectos/web/toma/toma-10.jpg",
-      "assets/proyectos/web/toma/toma-11.jpg",
-      "assets/proyectos/web/toma/toma-12.jpg",
-      "assets/proyectos/web/toma/toma-13.jpg",
-      "assets/proyectos/web/toma/toma-14.jpg",
-      "assets/proyectos/web/toma/toma-15.jpg",
-      "assets/proyectos/web/toma/toma-16.jpg",
-      "assets/proyectos/web/toma/toma-17.jpg",
-      "assets/proyectos/web/toma/toma-18.jpg",
-      "assets/proyectos/web/toma/toma-19.jpg",
-      "assets/proyectos/web/toma/toma-20.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias la Toma", [
+      "Alcantarilla antigua de los años 1920 debajo de las vias del tren.jpg",
+      "Alcantarilla años 1920.jpg",
+      "Bifurcación tramos en la Toma.jpg",
+      "Embalse la Salvajina.jpg",
+      "Embarcadero el Lago.jpg",
+      "Finalizando tramo colegio en la Toma.jpg",
+      "Fuentes hidricas.jpg",
+      "Funtes hidricas - Nacimiento de agua.jpg",
+      "Guia de la comunidad - embalse Salvajina.jpg",
+      "Inicio recorrido tramos la Toma.jpg",
+      "Paso en mula.jpg",
+      "Propuesta de linea de vida junto a lago.jpg",
+      "Punto obra de arte ( alcantarilla).jpg",
+      "Punto obra de arte (alcantarillas).jpg",
+      "Total de tramos recorridos para mejora en la vereda de la Toma - Google Earth.jpg",
+      "Vias alta montaña - la Toma.jpg",
+      "Vista de el embalse la Salvajina.jpg",
+      "Vista embalse Salvajina desde la Toma.jpg"
+    ])
   },
   {
     id: "vias-pureto-suarez",
@@ -164,30 +173,25 @@ const PROYECTOS = [
       "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
+    kmz: "assets/kmz/vias-pureto.kmz",
     portada: "assets/proyectos/web/pureto/pureto-01.jpg",
-    galeria: [
-      "assets/proyectos/web/pureto/pureto-01.jpg",
-      "assets/proyectos/web/pureto/pureto-02.jpg",
-      "assets/proyectos/web/pureto/pureto-03.jpg",
-      "assets/proyectos/web/pureto/pureto-04.jpg",
-      "assets/proyectos/web/pureto/pureto-05.jpg",
-      "assets/proyectos/web/pureto/pureto-06.jpg",
-      "assets/proyectos/web/pureto/pureto-07.jpg",
-      "assets/proyectos/web/pureto/pureto-08.jpg",
-      "assets/proyectos/web/pureto/pureto-09.jpg",
-      "assets/proyectos/web/pureto/pureto-10.jpg",
-      "assets/proyectos/web/pureto/pureto-11.jpg",
-      "assets/proyectos/web/pureto/pureto-12.jpg",
-      "assets/proyectos/web/pureto/pureto-13.jpg",
-      "assets/proyectos/web/pureto/pureto-14.jpg",
-      "assets/proyectos/web/pureto/pureto-15.jpg",
-      "assets/proyectos/web/pureto/pureto-16.jpg",
-      "assets/proyectos/web/pureto/pureto-17.jpg",
-      "assets/proyectos/web/pureto/pureto-18.jpg",
-      "assets/proyectos/web/pureto/pureto-19.jpg",
-      "assets/proyectos/web/pureto/pureto-20.jpg",
-      "assets/proyectos/web/pureto/pureto-21.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias Pureto", [
+      "Equipo de trabajo CELSIA Valle.jpg",
+      "Equipo de trabajo realizando toma de puntos con GPS de alta precisión.jpg",
+      "Puente artesanal donde se propone ponton en concreto.jpg",
+      "Punto de ubicaciopn de alcantarilla en curva con pendiente alta.jpg",
+      "Punto de ubicación de Box Culvert.jpg",
+      "Punto de ubicación de obra de arte vias afectadas.jpg",
+      "Punto de ubicación de obra de arte.jpg",
+      "Punto para ubicacion de Box Culvert.jpg",
+      "Puntos criticos en las vias de Pureto.jpg",
+      "Total de tramos recorridos para mejora en la vereda de Pureto - Google Earth.jpg",
+      "Vehiculo de trabajo con perdida de traccion por mal estado de la via.jpg",
+      "Vias con mejoramiento de superficie.jpg",
+      "Vias consideradas en buen estado y con banca amplia.jpg",
+      "Vias Pureto.jpg",
+      "Vista montañas Pureto.jpg"
+    ])
   },
   {
     id: "remodelacion-rama-judicial-cauca",
@@ -206,46 +210,39 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Corinto, Santander de Quilichao y Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
     portada: "assets/proyectos/web/rama-judicial/rama-judicial-01.jpg",
-    galeria: [
-      "assets/proyectos/web/rama-judicial/rama-judicial-01.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-02.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-03.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-04.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-05.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-06.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-07.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-08.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-09.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-10.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-11.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-12.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-13.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-14.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-15.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-16.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-17.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-18.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-19.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-20.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-21.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-22.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-23.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-24.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-25.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-26.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-27.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-28.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-29.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-30.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-31.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-32.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-33.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-34.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-35.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-36.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-37.jpg",
-      "assets/proyectos/web/rama-judicial/rama-judicial-38.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Remodelación Instalaciones Rama Judicial Corinto - Santander de Quilichao - Popayán", [
+      "Arquitectura clasica italiana combinada con estructura liviana - Palacio Nacional.jpg",
+      "Cielo raso terminado - Palacio Nacional.jpg",
+      "Construcción de caseta - Palacio de Justicia, Puerto Tejada, Cauca.jpg",
+      "Instalación cielo rasos - Palacio de Justicia, Popayán.jpg",
+      "Montaje nuevas oficinas segundo piso, acabados - Palacio Nacional.jpg",
+      "Montaje nuevas oficinas segundo piso, terminadas - Palacio Nacional.jpg",
+      "Montaje nuevas oficinas, segundo piso, estructura liviana - Palacio Nacional.jpg",
+      "Obras - Palacio Nacional.jpg",
+      "Obras de remodelación en oficinas terminadas - Palacio de Justica, Popayán.jpg",
+      "Obras electricas, instalción de luminarias - Palacio de Justicia, Popayán.jpg",
+      "Obras en altura - Palacio Nacional.jpg",
+      "Obras oficinas - Palcio de Justica, Popayán.jpg",
+      "Obras Termidas - Palacio de Justicia Santander de Quilichao.jpg",
+      "Palacio de Justicia, Santander de Quilichao.jpg",
+      "Palacio Nacional.jpg",
+      "Remodelación oficinas - Palacio de Justicia.jpg",
+      "Remodelación patios - Palacio de Justicia, Popayán.jpg",
+      "Remodelación pisos, pintura, oficinas - Palacio de Justicia, Santander de Quilichao.jpg",
+      "Remopdelación pisos, cielo raso - Palacio de Justicia, Popayán.jpg",
+      "Restauracion canales, pintura, tuberias - Palacio de Justicia, Popayán.jpg",
+      "Restauración canales - Palacio de Justicia, Popayán.jpg",
+      "Restauración canales y fachada - Juzgados Penales para Adolecentes, Popayán.jpg",
+      "Restauración canales y pintura - Palacio de Justicia, Popayán.jpg",
+      "Restauración canales, pintura, pisos, barandas - Palacio de Justicia, Santander de Quilichao.jpg",
+      "Restauración cielo raso artesona de composición ecléctica italiana - Palacio Nacional.jpg",
+      "Restauración columnas estilos eclectica italiana - Palacio Nacional.jpg",
+      "Restauración cubiertas - Palacio Nacional.jpg",
+      "Restauración cubiertas, cerrajeria y pintura plazoleta - Palacio Nacional.jpg",
+      "Restauración fachada principal - Palacio de Justicia, Popayán.jpg",
+      "Restauración pisos - Palacio de Justicia, Santander de Quilichao.jpg",
+      "Techos teja de barro, centro historico - Popayán.jpg"
+    ])
   },
   {
     id: "remodelacion-banos-popayan",
@@ -264,33 +261,28 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "assets/proyectos/web/remodelacion-banos/remodelacion-banos-01.jpg",
-    galeria: [
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-01.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-02.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-03.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-04.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-05.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-06.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-07.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-08.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-09.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-10.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-11.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-12.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-13.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-14.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-15.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-16.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-17.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-18.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-19.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-20.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-21.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-22.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-23.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-24.jpg",
-      "assets/proyectos/web/remodelacion-banos/remodelacion-banos-25.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Remodelación baños conjunto cerrado  Popayán", [
+      "20231207_184508.jpg",
+      "20231207_184535.jpg",
+      "20231207_184541.jpg",
+      "Bateria sanitaria existente baño 1.jpg",
+      "Bateria sanitaria existente baño 2.jpg",
+      "Baño 2 terminado foto 2.jpg",
+      "Baño 2 terminado.jpg",
+      "Demolición de enchape existente.jpg",
+      "Desmonte de aparatos sanitarios.jpg",
+      "Ducha baño 1.jpg",
+      "Ducha baño 2.jpg",
+      "Ducha completa baño 1.jpg",
+      "Enchape baño 1.jpg",
+      "Enchape baño 2.jpg",
+      "Instalación de aparatos sanitarios baño 1.jpg",
+      "Lavamanos baño 1.jpg",
+      "Lavamanos baño 2.jpg",
+      "Montaje baño 2.jpg",
+      "Preparación de muro para enchape.jpg",
+      "Proceso de enchape baño 2.jpg"
+    ])
   },
   {
     id: "remodelacion-casa-centro-popayan",
@@ -309,14 +301,44 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Centro histórico de Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
     portada: "assets/proyectos/web/casa-centro/casa-centro-01.jpg",
-    galeria: [
-      "assets/proyectos/web/casa-centro/casa-centro-01.jpg",
-      "assets/proyectos/web/casa-centro/casa-centro-02.jpg",
-      "assets/proyectos/web/casa-centro/casa-centro-03.jpg",
-      "assets/proyectos/web/casa-centro/casa-centro-04.jpg",
-      "assets/proyectos/web/casa-centro/casa-centro-05.jpg",
-      "assets/proyectos/web/casa-centro/casa-centro-06.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Remodelacion casa centro historico Popayán", [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "Avanze de obra.jpg",
+      "Carpinteria de puertas y ventanas.jpg",
+      "Castillos.jpg",
+      "Cielo razo en super board.jpg",
+      "Columnetas para refuerzo.jpg",
+      "Enmallado en muros de  adobe.jpg",
+      "Escombros.jpg",
+      "Iluminación de dia.jpg",
+      "Inicio de obra.JPG",
+      "Inicio obras.JPG",
+      "Luz de cielo blanca, apliques luz calida.JPG",
+      "Muro en mamposteria divisorio.jpg",
+      "Muros en adobe en mal estado.jpg",
+      "Obra blanca.JPG",
+      "Obra gris.jpg",
+      "Obra sala.jpg",
+      "Obra terminada 2.jpg",
+      "Obra terminada, pisos.jpg",
+      "Obra terminada.jpg",
+      "Portada terminada.jpg",
+      "Puerta  de acceso.jpg",
+      "Recuperacion de ventanas en Cedro.jpg",
+      "Regates e instalciones electricas.jpg",
+      "Repello.jpg",
+      "Retiro de escombros.jpg",
+      "Ultimos acabados.jpg",
+      "Ventana colonial  restaurada.jpg",
+      "Viga aerea de refuerzo.JPG",
+      "Zanjas para vigas de cimentación.jpg"
+    ])
   },
   {
     id: "casa-grande-resguardo-honduras",
@@ -336,28 +358,29 @@ const PROYECTOS = [
     ubicacion: { nombre: "Resguardo de Honduras, Morales, Cauca", lat: 2.7549, lng: -76.6273 },
     portada: "assets/proyectos/web/casa-grande/casa-grande-01.jpg",
     galeria: [
-      "assets/proyectos/web/casa-grande/casa-grande-01.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-02.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-03.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-04.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-05.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-06.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-07.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-08.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-09.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-10.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-11.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-12.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-13.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-14.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-15.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-16.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-17.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-18.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-19.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-20.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-21.jpg",
-      "assets/proyectos/web/casa-grande/casa-grande-22.jpg",
+      ...fotosDeCarpeta("portfolio-site/Casa grande Cabildo Indigena de Honduras  Morales - Cauca", [
+        "Construcción existente fahcada principal.jpg",
+        "Construcción existente vista aerea.jpg",
+        "Construcción existente vista lateral derecha.jpg",
+        "Construcción existente vista lateral izquierda.jpg",
+        "Cubierta.jpg",
+        "Emisora.jpg",
+        "Fachada Lateral Derecha.jpg",
+        "Fachada Lateral.jpg",
+        "Fachada Principal.jpg",
+        "Interior Corredor.jpg",
+        "Interior Oficinas.jpg",
+        "Interior Parqueadero.jpg",
+        "Interior.jpg",
+        "Isometrica derecha.jpg",
+        "Isometrica izquierda.jpg",
+        "Piso 1.jpg",
+        "Piso 2.jpg",
+        "Piso 3.jpg",
+        "Sotano.jpg",
+        "Vista Aerea.jpg",
+        "Zona Cafeteria.jpg"
+      ]),
       {
         type: "video",
         src: "assets/proyectos/web/casa-grande/casa-grande-resguardo.mp4",
@@ -383,70 +406,14 @@ const PROYECTOS = [
     ],
     ubicacion: { nombre: "Silvia, Cauca, Colombia", lat: 2.6115, lng: -76.3826 },
     portada: "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-01.jpg",
-    galeria: [
-      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-01.jpg",
-      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-02.jpg",
-      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-03.jpg",
-      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-04.jpg",
-      "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-05.jpg"
-    ]
+    galeria: fotosDeCarpeta("portfolio-site/Planta de tratamiento agua potable Silvia - Cauca", [
+      "Corte diseño PTAR.jpg",
+      "Georeferenciación PTAR - Planta.jpg",
+      "Instalación de equipo GPS de alta precisión.jpg",
+      "Municipio de Silvia - Cauca.jpg",
+      "Perfil, corte y planta PTAR.jpg",
+      "Punto de ubicación planta de tratamiento de aguas residuales - vista lateral.jpg",
+      "Punto de ubicación planta de tratamiento de aguas residuales.jpg"
+    ])
   }
 ];
-
-/* -------------------- CERTIFICADOS -------------------- */
-const CERTIFICADOS = {
-  estudios: [
-    {
-      titulo: "Ingeniería Civil — Pregrado",
-      institucion: "Universidad del Valle",
-      anio: "2016",
-      imagen: "assets/certificados/placeholder-cert-1.jpg",
-      archivo: "assets/certificados/placeholder-cert-1.jpg"
-    },
-    {
-      titulo: "Especialización en Estructuras",
-      institucion: "Universidad Nacional de Colombia",
-      anio: "2018",
-      imagen: "assets/certificados/placeholder-cert-2.jpg",
-      archivo: "assets/certificados/placeholder-cert-2.jpg"
-    },
-    {
-      titulo: "Diplomado en Interventoría de Obras",
-      institucion: "Universidad Javeriana Cali",
-      anio: "2020",
-      imagen: "assets/certificados/placeholder-cert-3.jpg",
-      archivo: "assets/certificados/placeholder-cert-3.jpg"
-    },
-    {
-      titulo: "Curso en Diseño Sismo Resistente NSR-10",
-      institucion: "SCI — Sociedad Colombiana de Ingenieros",
-      anio: "2021",
-      imagen: "assets/certificados/placeholder-cert-4.jpg",
-      archivo: "assets/certificados/placeholder-cert-4.jpg"
-    }
-  ],
-  laborales: [
-    {
-      titulo: "Certificación laboral — Residente de obra",
-      institucion: "Constructora XYZ S.A.S.",
-      anio: "2022 – 2023",
-      imagen: "assets/certificados/placeholder-lab-1.jpg",
-      archivo: "assets/certificados/placeholder-lab-1.jpg"
-    },
-    {
-      titulo: "Certificación laboral — Ingeniero de diseño",
-      institucion: "Consorcio Vial del Sur",
-      anio: "2021",
-      imagen: "assets/certificados/placeholder-lab-2.jpg",
-      archivo: "assets/certificados/placeholder-lab-2.jpg"
-    },
-    {
-      titulo: "Certificación laboral — Ingeniero residente",
-      institucion: "Institución educativa privada",
-      anio: "2019 – 2020",
-      imagen: "assets/certificados/placeholder-lab-3.jpg",
-      archivo: "assets/certificados/placeholder-lab-3.jpg"
-    }
-  ]
-};
-

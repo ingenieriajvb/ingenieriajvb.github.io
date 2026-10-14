@@ -552,6 +552,23 @@ section{padding:96px 0;}
   border-bottom:1px solid currentColor;
 }
 
+.route-section{padding-top:64px;}
+.route-section h2{font-size:1.4rem;}
+.route-description{color:var(--ink-soft);margin:0 0 18px;}
+#pd-route-viewer{
+  width:100%;
+  height:min(70vh,640px);
+  min-height:360px;
+  border:1px solid var(--line);
+  background:#dce6e8;
+}
+.route-status{color:var(--ink-soft);font-size:.88rem;margin:12px 0 0;}
+.route-section a.map-link{
+  display:inline-block;margin-top:8px;
+  font-size:.82rem;color:var(--petrol-600);
+  border-bottom:1px solid currentColor;
+}
+
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
