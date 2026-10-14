@@ -48,7 +48,7 @@ const PROYECTOS = [
   {
     id: "casa-campestre-popayan",
     titulo: "Casa Campestre Popayán",
-    categoria: "obra",
+    categoria: "diseno",
     anio: "2024",
     cliente: "Cliente particular",
     rol: "Proyecto residencial",
@@ -343,7 +343,7 @@ const PROYECTOS = [
   {
     id: "casa-grande-resguardo-honduras",
     titulo: "Casa Grande del Resguardo Indígena de Honduras",
-    categoria: "obra",
+    categoria: "diseno",
     anio: "2024",
     cliente: "Cabildo Indígena de Honduras",
     rol: "Proyecto de infraestructura",
@@ -392,7 +392,7 @@ const PROYECTOS = [
   {
     id: "planta-tratamiento-agua-silvia",
     titulo: "Planta de tratamiento de agua potable de Silvia",
-    categoria: "obra",
+    categoria: "diseno",
     anio: "2024",
     cliente: "Proyecto de agua potable",
     rol: "Infraestructura hidráulica",
