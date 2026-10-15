@@ -260,7 +260,6 @@ const PROYECTOS = [
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "portfolio-site/Remodelación baños conjunto cerrado  Popayán/Baño 2 terminado.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Remodelación baños conjunto cerrado  Popayán", [
-      "Aparatos sanitarios baño 1.jpg",
       "Bateria sanitaria existente baño 1.jpg",
       "Bateria sanitaria existente baño 2.jpg",
       "Desmonte de aparatos sanitarios.jpg",
@@ -275,6 +274,7 @@ const PROYECTOS = [
       "Instalación de aparatos sanitarios baño 1.jpg",
       "Lavamanos baño 1.jpg",
       "Montaje baño 2.jpg",
+      "Aparatos sanitarios baño 1.jpg",
       "Baño 2 terminado foto 2.jpg",
       "Baño 2 terminado.jpg",
       "Iluminación completa baño 2.jpg",
