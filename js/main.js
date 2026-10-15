@@ -178,10 +178,23 @@ function initProyectosGrid() {
   let filtro = params.get("cat") || "todos";
 
   const buttons = document.querySelectorAll(".filter-btn");
+  const ordenTodos = [
+    "casa-grande-resguardo-honduras",
+    "vias-pureto-suarez",
+    "remodelacion-casa-centro-popayan",
+    "planta-tratamiento-agua-silvia",
+    "vias-la-meseta-suarez",
+    "remodelacion-rama-judicial-cauca",
+    "casa-campestre-popayan",
+    "remodelacion-banos-popayan",
+    "vias-la-toma-suarez"
+  ];
 
   function render() {
     const lista = filtro === "todos" ? [...PROYECTOS] : PROYECTOS.filter(p => p.categoria === filtro);
-    if (filtro === "obra") {
+    if (filtro === "todos") {
+      lista.sort((a, b) => ordenTodos.indexOf(a.id) - ordenTodos.indexOf(b.id));
+    } else if (filtro === "obra") {
       const ordenObra = [
         "remodelacion-rama-judicial-cauca",
         "vias-la-meseta-suarez",
