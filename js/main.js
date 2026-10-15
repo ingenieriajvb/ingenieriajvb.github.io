@@ -180,7 +180,18 @@ function initProyectosGrid() {
   const buttons = document.querySelectorAll(".filter-btn");
 
   function render() {
-    const lista = filtro === "todos" ? PROYECTOS : PROYECTOS.filter(p => p.categoria === filtro);
+    const lista = filtro === "todos" ? [...PROYECTOS] : PROYECTOS.filter(p => p.categoria === filtro);
+    if (filtro === "obra") {
+      const ordenObra = [
+        "remodelacion-rama-judicial-cauca",
+        "vias-la-meseta-suarez",
+        "remodelacion-banos-popayan",
+        "vias-pureto-suarez",
+        "remodelacion-casa-centro-popayan",
+        "vias-la-toma-suarez"
+      ];
+      lista.sort((a, b) => ordenObra.indexOf(a.id) - ordenObra.indexOf(b.id));
+    }
     el.innerHTML = lista.length
       ? lista.map(sheetCardHTML).join("")
       : `<p style="color:var(--concrete)">Aún no hay proyectos en esta categoría.</p>`;
