@@ -238,6 +238,10 @@ function initProyectoDetalle() {
   const gal = document.getElementById("pd-gallery");
   const mediaItems = getProjectMediaItems(p);
   gal.innerHTML = mediaItems.map(item => mediaToMarkup(item, p.titulo)).join("");
+  gal.addEventListener("error", event => {
+    if (!(event.target instanceof HTMLImageElement)) return;
+    event.target.closest(".gallery-image-button")?.remove();
+  }, true);
   initProjectImageViewer(gal, p.titulo);
 
   // Siguiente proyecto
