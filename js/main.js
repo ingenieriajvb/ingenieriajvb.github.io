@@ -156,7 +156,16 @@ function getProjectMediaItems(p) {
 function initHomeFeatured() {
   const el = document.getElementById("featured-projects");
   if (!el) return;
-  const destacados = PROYECTOS.slice(0, 3);
+  const destacadosIds = [
+    "casa-grande-resguardo-honduras",
+    "remodelacion-rama-judicial-cauca",
+    "vias-pureto-suarez"
+  ];
+  const destacados = destacadosIds.map(id => {
+    const proyecto = PROYECTOS.find(item => item.id === id);
+    if (!proyecto) throw new Error(`No se encontró el proyecto destacado "${id}".`);
+    return proyecto;
+  });
   el.innerHTML = destacados.map(sheetCardHTML).join("");
 }
 
