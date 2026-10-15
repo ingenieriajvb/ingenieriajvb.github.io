@@ -261,9 +261,7 @@ const PROYECTOS = [
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "portfolio-site/Remodelación baños conjunto cerrado  Popayán/Baño 2 terminado.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Remodelación baños conjunto cerrado  Popayán", [
-      "20231207_184508.jpg",
-      "20231207_184535.jpg",
-      "20231207_184541.jpg",
+      "Aparatos sanitarios baño 1.jpg",
       "Bateria sanitaria existente baño 1.jpg",
       "Bateria sanitaria existente baño 2.jpg",
       "Baño 2 terminado foto 2.jpg",
@@ -275,9 +273,10 @@ const PROYECTOS = [
       "Ducha completa baño 1.jpg",
       "Enchape baño 1.jpg",
       "Enchape baño 2.jpg",
+      "Iluminación completa baño 2.jpg",
+      "Iluminación parcial baño 2.jpg",
       "Instalación de aparatos sanitarios baño 1.jpg",
       "Lavamanos baño 1.jpg",
-      "Lavamanos baño 2.jpg",
       "Montaje baño 2.jpg",
       "Preparación de muro para enchape.jpg",
       "Proceso de enchape baño 2.jpg"
