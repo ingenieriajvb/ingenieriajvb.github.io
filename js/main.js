@@ -424,9 +424,12 @@ function initProjectImageViewer(gallery, projectTitle) {
   }, { passive: false });
 
   viewerImage.addEventListener("pointerdown", event => {
-    if (event.pointerType === "mouse" && zoom === 1) return;
+    const isMouse = event.pointerType === "mouse";
+    const isMiddleButton = isMouse && event.button === 1;
+    if (isMiddleButton || (isMouse && zoom > 1)) event.preventDefault();
+    if (isMouse && (zoom === 1 || (event.button !== 0 && !isMiddleButton))) return;
     pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-    if (event.pointerType !== "touch") viewerImage.setPointerCapture(event.pointerId);
+    if (isMouse || event.pointerType === "pen") viewerImage.setPointerCapture(event.pointerId);
     if (pointers.size === 2) {
       beginPinch();
     } else if (pointers.size === 1 && zoom > 1) {
@@ -439,6 +442,10 @@ function initProjectImageViewer(gallery, projectTitle) {
         offsetY
       };
     }
+  });
+
+  viewerImage.addEventListener("auxclick", event => {
+    if (event.button === 1) event.preventDefault();
   });
 
   viewerImage.addEventListener("pointermove", event => {
@@ -459,6 +466,7 @@ function initProjectImageViewer(gallery, projectTitle) {
       offsetX = gesture.offsetX + event.clientX - gesture.x;
       offsetY = gesture.offsetY + event.clientY - gesture.y;
       updateZoom();
+      viewerImage.style.cursor = "grabbing";
     }
   });
 
