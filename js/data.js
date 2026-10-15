@@ -405,7 +405,7 @@ const PROYECTOS = [
       "Registro fotográfico del proyecto"
     ],
     ubicacion: { nombre: "Silvia, Cauca, Colombia", lat: 2.6115, lng: -76.3826 },
-    portada: "assets/proyectos/web/planta-agua-silvia/planta-agua-silvia-01.jpg",
+    portada: "portfolio-site/Planta de tratamiento agua potable Silvia - Cauca/Georeferenciación PTAR - Planta.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Planta de tratamiento agua potable Silvia - Cauca", [
       "Corte diseño PTAR.jpg",
       "Georeferenciación PTAR - Planta.jpg",
