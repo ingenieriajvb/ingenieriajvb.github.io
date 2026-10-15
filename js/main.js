@@ -219,7 +219,6 @@ function initProyectoDetalle() {
   document.getElementById("pd-hero-img").src = heroMedia;
   document.getElementById("pd-hero-img").alt = p.titulo;
 
-  document.getElementById("pd-rol").textContent = p.rol;
   document.getElementById("pd-ubicacion-meta").textContent = p.ubicacion.nombre;
 
   document.getElementById("pd-descripcion").innerHTML = p.descripcion.map(t => `<p>${t}</p>`).join("");
