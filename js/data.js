@@ -65,15 +65,15 @@ const PROYECTOS = [
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "assets/proyectos/web/casa-campestre/casa-campestre-01.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Casa Campestre Popayán", [
-      "Cubierta.png",
       "Fachadas y Cortes.png",
-      "Lote.jpeg",
+      "Planta Primer Piso.png",
+      "Planta Segundo Piso.png",
       "Plano Electrico.png",
       "Plano Hidraulico.png",
       "Plano Sanitario Primer Piso.png",
       "Plano Sanitario segundo piso.png",
-      "Planta Primer Piso.png",
-      "Planta Segundo Piso.png"
+      "Cubierta.png",
+      "Lote.jpeg"
     ])
   },
   {
