@@ -600,6 +600,12 @@ section{padding:96px 0;}
   overflow:visible;
 }
 .image-viewer::backdrop{background:rgba(5,18,21,.88);}
+.image-viewer.is-zoomed .image-viewer-nav,
+.image-viewer.is-zoomed .image-viewer-close{
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+}
 .image-viewer-stage{
   position:relative;
   display:flex;

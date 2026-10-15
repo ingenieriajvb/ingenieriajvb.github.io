@@ -386,6 +386,7 @@ function initProjectImageViewer(gallery, projectTitle) {
     constrainOffset();
     viewerImage.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0) scale(${zoom})`;
     viewerImage.style.cursor = zoom > 1 ? "grab" : "zoom-in";
+    viewer.classList.toggle("is-zoomed", zoom > 1);
   }
 
   function resetZoom() {
