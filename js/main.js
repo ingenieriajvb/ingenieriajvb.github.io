@@ -341,10 +341,64 @@ function initProjectImageViewer(gallery, projectTitle) {
   const nextButton = viewer.querySelector(".image-viewer-next");
   let images = [];
   let currentIndex = 0;
+  let zoom = 1;
+  let offsetX = 0;
+  let offsetY = 0;
+  const pointers = new Map();
+  let gesture = null;
+
+  function constrainOffset() {
+    const maxX = viewerImage.offsetWidth * (zoom - 1) / 2;
+    const maxY = viewerImage.offsetHeight * (zoom - 1) / 2;
+    offsetX = Math.max(-maxX, Math.min(maxX, offsetX));
+    offsetY = Math.max(-maxY, Math.min(maxY, offsetY));
+  }
+
+  function updateZoom() {
+    constrainOffset();
+    viewerImage.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0) scale(${zoom})`;
+    viewerImage.style.cursor = zoom > 1 ? "grab" : "zoom-in";
+  }
+
+  function resetZoom() {
+    zoom = 1;
+    offsetX = 0;
+    offsetY = 0;
+    pointers.clear();
+    gesture = null;
+    updateZoom();
+  }
+
+  function zoomAt(nextZoom, clientX, clientY) {
+    const rect = viewer.querySelector(".image-viewer-stage").getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const imageX = (clientX - centerX - offsetX) / zoom;
+    const imageY = (clientY - centerY - offsetY) / zoom;
+    zoom = Math.max(1, Math.min(5, nextZoom));
+    offsetX = clientX - centerX - imageX * zoom;
+    offsetY = clientY - centerY - imageY * zoom;
+    updateZoom();
+  }
+
+  function beginPinch() {
+    const [first, second] = pointers.values();
+    const centerX = (first.x + second.x) / 2;
+    const centerY = (first.y + second.y) / 2;
+    const rect = viewer.querySelector(".image-viewer-stage").getBoundingClientRect();
+    gesture = {
+      type: "pinch",
+      distance: Math.hypot(second.x - first.x, second.y - first.y),
+      zoom,
+      imageX: (centerX - rect.left - rect.width / 2 - offsetX) / zoom,
+      imageY: (centerY - rect.top - rect.height / 2 - offsetY) / zoom
+    };
+  }
 
   function showImage(index) {
     currentIndex = (index + images.length) % images.length;
     const image = images[currentIndex].querySelector("img");
+    resetZoom();
     viewerImage.src = image.src;
     viewerImage.alt = image.alt;
     caption.textContent = image.alt && image.alt !== projectTitle
@@ -364,6 +418,72 @@ function initProjectImageViewer(gallery, projectTitle) {
     viewer.showModal();
   });
 
+  viewerImage.addEventListener("wheel", event => {
+    event.preventDefault();
+    zoomAt(zoom * (event.deltaY < 0 ? 1.15 : 1 / 1.15), event.clientX, event.clientY);
+  }, { passive: false });
+
+  viewerImage.addEventListener("pointerdown", event => {
+    if (event.pointerType === "mouse" && zoom === 1) return;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (event.pointerType !== "touch") viewerImage.setPointerCapture(event.pointerId);
+    if (pointers.size === 2) {
+      beginPinch();
+    } else if (pointers.size === 1 && zoom > 1) {
+      gesture = {
+        type: "pan",
+        pointerId: event.pointerId,
+        x: event.clientX,
+        y: event.clientY,
+        offsetX,
+        offsetY
+      };
+    }
+  });
+
+  viewerImage.addEventListener("pointermove", event => {
+    if (!pointers.has(event.pointerId)) return;
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+    if (pointers.size >= 2 && gesture?.type === "pinch") {
+      const [first, second] = pointers.values();
+      const centerX = (first.x + second.x) / 2;
+      const centerY = (first.y + second.y) / 2;
+      const rect = viewer.querySelector(".image-viewer-stage").getBoundingClientRect();
+      zoom = Math.max(1, Math.min(5, gesture.zoom *
+        Math.hypot(second.x - first.x, second.y - first.y) / gesture.distance));
+      offsetX = centerX - rect.left - rect.width / 2 - gesture.imageX * zoom;
+      offsetY = centerY - rect.top - rect.height / 2 - gesture.imageY * zoom;
+      updateZoom();
+    } else if (gesture?.type === "pan" && gesture.pointerId === event.pointerId) {
+      offsetX = gesture.offsetX + event.clientX - gesture.x;
+      offsetY = gesture.offsetY + event.clientY - gesture.y;
+      updateZoom();
+    }
+  });
+
+  function endPointer(event) {
+    pointers.delete(event.pointerId);
+    if (pointers.size >= 2) {
+      beginPinch();
+    } else if (pointers.size === 1 && zoom > 1) {
+      const [pointerId, point] = pointers.entries().next().value;
+      gesture = {
+        type: "pan",
+        pointerId,
+        x: point.x,
+        y: point.y,
+        offsetX,
+        offsetY
+      };
+    } else {
+      gesture = null;
+    }
+  }
+
+  viewerImage.addEventListener("pointerup", endPointer);
+  viewerImage.addEventListener("pointercancel", endPointer);
+
   previousButton.addEventListener("click", () => showImage(currentIndex - 1));
   nextButton.addEventListener("click", () => showImage(currentIndex + 1));
   viewer.addEventListener("keydown", event => {
@@ -373,6 +493,7 @@ function initProjectImageViewer(gallery, projectTitle) {
     }
   });
   closeButton.addEventListener("click", () => viewer.close());
+  viewer.addEventListener("close", resetZoom);
   viewer.addEventListener("click", event => {
     if (event.target === viewer) viewer.close();
   });
