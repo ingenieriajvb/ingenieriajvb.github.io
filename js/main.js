@@ -524,14 +524,6 @@ function initProjectImageViewer(gallery, projectTitle) {
   previousButton.addEventListener("click", () => showImage(currentIndex - 1));
   nextButton.addEventListener("click", () => showImage(currentIndex + 1));
   viewer.addEventListener("keydown", event => {
-    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-      event.preventDefault();
-      const rect = viewer.querySelector(".image-viewer-stage").getBoundingClientRect();
-      const direction = event.key === "ArrowUp" ? 1.15 : 1 / 1.15;
-      zoomAt(zoom * direction, rect.left + rect.width / 2, rect.top + rect.height / 2);
-      return;
-    }
-
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
       showImage(currentIndex + (event.key === "ArrowRight" ? 1 : -1));
