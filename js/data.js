@@ -350,7 +350,7 @@ const PROYECTOS = [
       "Infraestructura comunitaria",
       "Registro fotográfico y audiovisual"
     ],
-    ubicacion: { nombre: "Resguardo de Honduras, Morales, Cauca", lat: 2.7549, lng: -76.6273 },
+    ubicacion: { nombre: "Parque principal de Morales, Cauca", lat: 2.75750, lng: -76.63050 },
     portada: "assets/proyectos/web/casa-grande/casa-grande-01.jpg",
     galeria: [
       ...fotosDeCarpeta("portfolio-site/Casa grande Cabildo Indigena de Honduras  Morales - Cauca", [
