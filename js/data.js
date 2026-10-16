@@ -96,6 +96,7 @@ const PROYECTOS = [
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "assets/proyectos/web/meseta/meseta-01.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias la Meseta", [
+      "Total de tramos recorridos para mejora en la vereda de la  Meseta - Google Earth.jpg",
       "Canoas para trasporte de comercio local por via fluvial.jpg",
       "Embalse la Salvajina - Suarez.jpg",
       "Embalse la Salvajina vista desde la Meseta.jpg",
@@ -109,7 +110,6 @@ const PROYECTOS = [
       "Propuesta de ubicación de obra de arte ( alcantarilla).jpg",
       "Puente artesanal en madera donde se propone ubicación de  obra de arte.jpg",
       "Punto donde  se propone alcantarilla.jpg",
-      "Total de tramos recorridos para mejora en la vereda de la  Meseta - Google Earth.jpg",
       "Ubicacion de obras de arte y propuesta de mejoras inmediatas por el alto deterioro.jpg",
       "Vehiculo de trabajo en vias con malas condiciones.jpg",
       "Vias con propuesta de placa huella por condiciones actuales - la Meseta.jpg"
@@ -135,6 +135,7 @@ const PROYECTOS = [
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "assets/proyectos/web/toma/toma-01.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias la Toma", [
+      "Total de tramos recorridos para mejora en la vereda de la Toma - Google Earth.jpg",
       "Alcantarilla antigua de los años 1920 debajo de las vias del tren.jpg",
       "Alcantarilla años 1920.jpg",
       "Bifurcación tramos en la Toma.jpg",
@@ -149,7 +150,6 @@ const PROYECTOS = [
       "Propuesta de linea de vida junto a lago.jpg",
       "Punto obra de arte ( alcantarilla).jpg",
       "Punto obra de arte (alcantarillas).jpg",
-      "Total de tramos recorridos para mejora en la vereda de la Toma - Google Earth.jpg",
       "Vias alta montaña - la Toma.jpg",
       "Vista de el embalse la Salvajina.jpg",
       "Vista embalse Salvajina desde la Toma.jpg"
@@ -175,6 +175,7 @@ const PROYECTOS = [
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "portfolio-site/Diagnostico vial Suarez - Cauca/Vias Pureto/Vehiculo de trabajo con perdida de traccion por mal estado de la via.jpg",
     galeria: fotosDeCarpeta("portfolio-site/Diagnostico vial Suarez - Cauca/Vias Pureto", [
+      "Total de tramos recorridos para mejora en la vereda de Pureto - Google Earth.jpg",
       "Equipo de trabajo CELSIA Valle.jpg",
       "Equipo de trabajo realizando toma de puntos con GPS de alta precisión.jpg",
       "Puente artesanal donde se propone ponton en concreto.jpg",
@@ -184,7 +185,6 @@ const PROYECTOS = [
       "Punto de ubicación de obra de arte.jpg",
       "Punto para ubicacion de Box Culvert.jpg",
       "Puntos criticos en las vias de Pureto.jpg",
-      "Total de tramos recorridos para mejora en la vereda de Pureto - Google Earth.jpg",
       "Vehiculo de trabajo con perdida de traccion por mal estado de la via.jpg",
       "Vias con mejoramiento de superficie.jpg",
       "Vias consideradas en buen estado y con banca amplia.jpg",
