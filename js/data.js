@@ -52,15 +52,15 @@ const PROYECTOS = [
     anio: "2024",
     cliente: "Cliente particular",
     rol: "Proyecto residencial",
-    resumen: "Diseño y ejecución de vivienda campestre con propuesta arquitectónica y obra civil adaptada al terreno.",
+    resumen: "Diseño arquitectónico, estructural, hidraulico, hidrosanitario y electrico de vivienda campestre en las afueras de Popayán",
     descripcion: [
-      "Proyecto de vivienda campestre desarrollado con enfoque funcional, paisajístico y constructivo, ajustado a las condiciones del sitio y la topografía.",
-      "Se gestionó la ejecución de obra con coordinación de acabados, estructura, urbanismo y detalles constructivos que aportan valor al proyecto final."
+      "Proyecto de vivienda campestre desarrollado con enfoque funcional, moderno, con la mejor relacion calidad precio. Ajustado a las condiciones del sitio y las necesidades del cliente.",
+      "Se realizo el presupuesto de todas las etapas de construcción y terminación de acabados de acuerdo a especificaciones del cliente."
     ],
     alcance: [
-      "Diseño y obra civil residencial",
+      "Diseño residencial integral",
       "Ajuste a topografía y condiciones del lote",
-      "Coordinación de acabados y detalles de construcción"
+      "Presupuesto y programación de obra",
     ],
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "assets/proyectos/web/casa-campestre/casa-campestre-01.jpg",
@@ -86,12 +86,13 @@ const PROYECTOS = [
     resumen: "Estudio de diagnóstico vial para sectores rurales con análisis de condición, tramos, y necesidades de intervención.",
     descripcion: [
       "Se realizó el diagnóstico de vías en el corregimiento La Meseta con revisión de condiciones de servicio, deterioro superficial y necesidad de intervención.",
-      "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la red vial local."
+      "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la ubicación de obras de arte.",
+      "El recorrido total caminado por el equipo fue de 70 kilometros aproximadamente."
     ],
     alcance: [
-      "Inspección técnica del tramo vial",
-      "Evaluación de condición y deterioro",
-      "Diagnóstico para intervención y priorización"
+      "Diagnóstico técnico de los tramos viales",
+      "Evaluación de condiciónes junto con la comunidad",
+      "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "assets/proyectos/web/meseta/meseta-01.jpg",
@@ -113,7 +114,11 @@ const PROYECTOS = [
       "Ubicacion de obras de arte y propuesta de mejoras inmediatas por el alto deterioro.jpg",
       "Vehiculo de trabajo en vias con malas condiciones.jpg",
       "Vias con propuesta de placa huella por condiciones actuales - la Meseta.jpg"
-    ])
+      ]).concat([{
+        type: "video",
+        src: "portfolio-site/Diagnostico vial Suarez - Cauca/Vias la Meseta/Vias de la Meseta.mp4",
+        mime: "video/mp4"
+      }])
   },
   {
     id: "vias-la-toma-suarez",
@@ -125,12 +130,13 @@ const PROYECTOS = [
     resumen: "Revisión y diagnóstico de tramos viales en La Toma, con prioridad en condiciones de servicio y mantenimiento.",
     descripcion: [
       "Se evaluaron los tramos viales del sector de La Toma para determinar estado actual, afectaciones y requerimientos de intervención.",
-      "El trabajo incluyó observación técnica de la infraestructura y registro fotográfico para apoyar decisiones de rehabilitación y mantenimiento."
+      "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la ubicación de obras de arte.",
+      "El recorrido total caminado por el equipo fue de 73 kilometros aproximadamente."
     ],
     alcance: [
-      "Evaluación geométrica y funcional",
-      "Inspección de condiciones actuales",
-      "Diagnóstico para intervención vial"
+      "Diagnóstico técnico de los tramos viales",
+      "Evaluación de condiciónes junto con la comunidad",
+      "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
     portada: "assets/proyectos/web/toma/toma-01.jpg",
@@ -153,7 +159,11 @@ const PROYECTOS = [
       "Vias alta montaña - la Toma.jpg",
       "Vista de el embalse la Salvajina.jpg",
       "Vista embalse Salvajina desde la Toma.jpg"
-    ])
+      ]).concat([{
+        type: "video",
+        src: "portfolio-site/Diagnostico vial Suarez - Cauca/Vias la Toma/Embalse.mp4",
+        mime: "video/mp4"
+      }])
   },
   {
     id: "vias-pureto-suarez",
@@ -165,11 +175,12 @@ const PROYECTOS = [
     resumen: "Inspección técnica de vías en el sector Puerto, con análisis de afectaciones y requerimientos de intervención.",
     descripcion: [
       "Se adelantó un diagnóstico técnico para tramos viales del sector Pureto, revisando su condición física, operación y necesidad de mejoras.",
-      "La información recopilada sirvió de base para priorizar intervenciones y apoyar la gestión del mantenimiento vial."
+      "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la ubicación de obras de arte.",
+      "El recorrido total caminado por el equipo fue de 31 kilometros aproximadamente."
     ],
     alcance: [
-      "Diagnóstico técnico del tramo",
-      "Registro fotográfico y revisión visual",
+      "Diagnóstico técnico de los tramos viales",
+      "Evaluación de condiciónes junto con la comunidad",
       "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
@@ -190,7 +201,11 @@ const PROYECTOS = [
       "Vias consideradas en buen estado y con banca amplia.jpg",
       "Vias Pureto.jpg",
       "Vista montañas Pureto.jpg"
-    ])
+      ]).concat([{
+        type: "video",
+        src: "portfolio-site/Diagnostico vial Suarez - Cauca/Vias Pureto/Vias de dificil acceso.mp4",
+        mime: "video/mp4"
+      }])
   },
   {
     id: "remodelacion-rama-judicial-cauca",
@@ -201,11 +216,11 @@ const PROYECTOS = [
     rol: "Remodelación de instalaciones",
     resumen: "Registro de la remodelación de sedes judiciales en Corinto, Santander de Quilichao y Popayán.",
     descripcion: [
-      "Registro fotográfico de las obras de remodelación realizadas en instalaciones de la Rama Judicial en el Cauca."
+      "Registro fotográfico de las obras de remodelación y restauraciones realizadas en instalaciones de la Rama Judicial en el Cauca."
     ],
     alcance: [
       "Remodelación de instalaciones",
-      "Registro fotográfico de obra"
+      "Palacio Nacional, Palacio de Justicia de Popayán, Juzgado Penal para Adolescentes de Popayán, Palacio de Justicia de Santander de Quilichao, Palacio de Justicia de Corinto, Palacio de Justicia de Puerto Tejada",
     ],
     ubicacion: { nombre: "Corinto, Santander de Quilichao y Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
     portada: "portfolio-site/Remodelación Instalaciones Rama Judicial Corinto - Santander de Quilichao - Popayán/Restauración fachada plazoleta - Palacio Nacional.jpg",
@@ -251,11 +266,11 @@ const PROYECTOS = [
     rol: "Remodelación",
     resumen: "Remodelación de baños en un conjunto residencial de Popayán.",
     descripcion: [
-      "Registro fotográfico del proceso de remodelación de los baños del conjunto residencial."
+      "Remodelación de baños en conjunto residencial de la ciudad de Popayán con acabados modernos de alta calidad e iluminación adecuada a las normas y a la necesidad del cliente."
     ],
     alcance: [
       "Remodelación de baños",
-      "Registro fotográfico de obra"
+      "Elaboración de presupuesto.",
     ],
     ubicacion: { nombre: "Popayán, Cauca, Colombia", lat: 2.4448, lng: -76.6140 },
     portada: "portfolio-site/Remodelación baños conjunto cerrado  Popayán/Baño 2 terminado.jpg",
@@ -288,11 +303,13 @@ const PROYECTOS = [
     rol: "Remodelación residencial",
     resumen: "Remodelación de una vivienda en el centro histórico de Popayán.",
     descripcion: [
-      "Registro visual del proyecto de remodelación de una casa ubicada en el centro histórico de Popayán."
+      "Remodelación residencial de una casa construida en adobe y afectada por el terremoto de 1983 y el paso del tiempo en la ciudad de Popayán.",
+      "Se realizó la restauración de muros, vigas, cielos rasos, pisos y acabados de la vivienda, con el objetivo de conservar y copnbinar la arquitectura colonial con la arquitectura moderna y mejorar la funcionalidad y estética del espacio."
     ],
     alcance: [
       "Remodelación residencial",
-      "Registro fotográfico del proyecto"
+      "Combinación de arquitectura colonial y moderna",
+      "Unión de sistemas estructurales, adobe por gravedad y aporticado por distribución de fuerzas",
     ],
     ubicacion: { nombre: "Centro histórico de Popayán, Cauca", lat: 2.4448, lng: -76.6140 },
     portada: "portfolio-site/Remodelacion casa centro historico Popayán/Obra terminada 2.jpg",
@@ -344,11 +361,13 @@ const PROYECTOS = [
     rol: "Proyecto de infraestructura",
     resumen: "Proyecto de Casa Grande para el Cabildo Indígena de Honduras, en Morales, Cauca.",
     descripcion: [
-      "Registro fotográfico y audiovisual de la Casa Grande del Resguardo Indígena de Honduras."
+      "Consultoria tecnica de la Casa Grande para el resguardo indígena de Honduras."
     ],
     alcance: [
-      "Infraestructura comunitaria",
-      "Registro fotográfico y audiovisual"
+      "Elaboración de diseño con propuesta vanguardista conservando la arquitectura tradicional de la región.",
+      "Diseño y proyección de la construcción",
+      "Render Interactivo 3D",
+      "Presupuesto y cronograma de obra",
     ],
     ubicacion: { nombre: "Parque principal de Morales, Cauca", lat: 2.75750, lng: -76.63050 },
     portada: "assets/proyectos/web/casa-grande/casa-grande-01.jpg",
