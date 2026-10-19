@@ -22,7 +22,7 @@ const SITE = {
   heroStats: [
     { valor: "8+", texto: "Años de experiencia" },
     { valor: "8+", texto: "Proyectos ejecutados" },
-    { valor: "3", texto: "Áreas: obra, vial y residencial" }
+    { valor: "3", texto: "Áreas: Presupuestos, diseño, obra" }
   ],
   acercaDeNosotros: {
     titulo: "Acerca de nosotros",
