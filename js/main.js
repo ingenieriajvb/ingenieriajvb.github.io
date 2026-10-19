@@ -132,7 +132,7 @@ function mediaToMarkup(item, alt = "") {
       const poster = item.poster ? ` poster="${item.poster}"` : "";
       return `<video controls preload="metadata"${poster}><source src="${src}" type="${item.mime || "video/mp4"}"></video>`;
     }
-    const imageAlt = item.alt || item.caption || alt;
+    const imageAlt = corregirOrtografia(item.alt || item.caption || alt);
     return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${imageAlt}"><img src="${src}" alt="${imageAlt}" loading="lazy"><span class="gallery-caption" aria-hidden="true">${imageAlt}</span></button>`;
   }
 
@@ -549,7 +549,7 @@ function initContacto() {
 
   if (phoneEl) {
     phoneEl.textContent = SITE.telefono || "Teléfono no disponible";
-    phoneEl.href = `https://wa.me/573206093811?text=${encodeURIComponent("Hola Julian, quiero hablar sobre un proyecto.")}`;
+    phoneEl.href = `https://wa.me/573206093811?text=${encodeURIComponent("Hola Julián, quiero hablar sobre un proyecto.")}`;
   }
 
   if (linkedinEl) {

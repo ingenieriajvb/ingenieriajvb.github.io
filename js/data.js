@@ -8,7 +8,7 @@
    ============================================================ */
 
 const SITE = {
-  nombre: "Julian Velasco",
+  nombre: "Julián Velasco",
   titulo: "Ingeniero Civil",
   ubicacionBase: "Colombia",
   email: "ingenieriajvb@gmail.com",
@@ -40,8 +40,77 @@ const SITE = {
 function fotosDeCarpeta(carpeta, nombres) {
   return nombres.map(nombre => ({
     src: `${carpeta}/${nombre}`,
-    alt: nombre.replace(/\.[^.]+$/, "")
+    alt: corregirOrtografia(nombre.replace(/\.[^.]+$/, ""))
   }));
+}
+
+function corregirOrtografia(texto) {
+  const correcciones = {
+    adolecentes: "adolescentes",
+    avanze: "avance",
+    bateria: "batería",
+    cafeteria: "cafetería",
+    carpinteria: "carpintería",
+    diagnostico: "diagnóstico",
+    funtes: "fuentes",
+    guia: "guía",
+    georeferenciacion: "georreferenciación",
+    isometrica: "isométrica",
+    instalción: "instalación",
+    instalcion: "instalación",
+    instalciones: "instalaciones",
+    justica: "justicia",
+    palcio: "palacio",
+    ponton: "pontón",
+    regates: "regatas",
+    remopdelación: "remodelación",
+    sotano: "sótano",
+    termidas: "terminadas",
+    aerea: "aérea",
+    calida: "cálida",
+    clasica: "clásica",
+    criticos: "críticos",
+    dificil: "difícil",
+    dia: "día",
+    eclectica: "ecléctica",
+    electrico: "eléctrico",
+    electricas: "eléctricas",
+    fahcada: "fachada",
+    historico: "histórico",
+    hidraulico: "hidráulico",
+    hidricas: "hídricas",
+    kilometros: "kilómetros",
+    linea: "línea",
+    mamposteria: "mampostería",
+    perdida: "pérdida",
+    realizo: "realizó",
+    relacion: "relación",
+    recuperacion: "recuperación",
+    restauracion: "restauración",
+    suarez: "suárez",
+    trasporte: "transporte",
+    traccion: "tracción",
+    tuberias: "tuberías",
+    ultimos: "últimos",
+    ubicaciopn: "ubicación",
+    ubicacion: "ubicación",
+    vehiculo: "vehículo",
+    via: "vía",
+    vias: "vías"
+  };
+  const textoCorregido = texto.replace(/[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g, palabra => {
+    const correccion = correcciones[palabra.toLowerCase()];
+    if (!correccion) return palabra;
+    return palabra[0] === palabra[0].toUpperCase()
+      ? correccion[0].toUpperCase() + correccion.slice(1)
+      : correccion;
+  });
+  return textoCorregido
+    .replace(/restauración cielo raso artesona/gi, "Restauración del cielo raso artesonado")
+    .replace(/instalación cielo rasos/gi, "Instalación de cielos rasos")
+    .replace(/restauración columnas estilos ecléctica italiana/gi, "Restauración de columnas de estilo ecléctico italiano")
+    .replace(/techos teja de barro/gi, "Techos de teja de barro")
+    .replace(/vista de el embalse/gi, "Vista del embalse");
 }
 
 const PROYECTOS = [
@@ -52,10 +121,10 @@ const PROYECTOS = [
     anio: "2024",
     cliente: "Cliente particular",
     rol: "Proyecto residencial",
-    resumen: "Diseño arquitectónico, estructural, hidraulico, hidrosanitario y electrico de vivienda campestre en las afueras de Popayán",
+    resumen: "Diseño arquitectónico, estructural, hidráulico, hidrosanitario y eléctrico de una vivienda campestre en las afueras de Popayán.",
     descripcion: [
-      "Proyecto de vivienda campestre desarrollado con enfoque funcional, moderno, con la mejor relacion calidad precio. Ajustado a las condiciones del sitio y las necesidades del cliente.",
-      "Se realizo el presupuesto de todas las etapas de construcción y terminación de acabados de acuerdo a especificaciones del cliente."
+      "Proyecto de vivienda campestre desarrollado con un enfoque funcional y moderno, buscando la mejor relación entre calidad y precio, y ajustado a las condiciones del sitio y a las necesidades del cliente.",
+      "Se realizó el presupuesto de todas las etapas de construcción y de terminación de acabados, de acuerdo con las especificaciones del cliente."
     ],
     alcance: [
       "Diseño residencial integral",
@@ -83,15 +152,15 @@ const PROYECTOS = [
     anio: "2021",
     cliente: "Municipio de Suárez",
     rol: "Diagnóstico y seguimiento vial",
-    resumen: "Estudio de diagnóstico vial para sectores rurales con análisis de condición, tramos, y necesidades de intervención.",
+    resumen: "Estudio de diagnóstico vial en sectores rurales, con análisis de las condiciones de los tramos y de las necesidades de intervención.",
     descripcion: [
       "Se realizó el diagnóstico de vías en el corregimiento La Meseta con revisión de condiciones de servicio, deterioro superficial y necesidad de intervención.",
       "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la ubicación de obras de arte.",
-      "El recorrido total caminado por el equipo fue de 70 kilometros aproximadamente."
+      "El equipo recorrió aproximadamente 70 kilómetros a pie."
     ],
     alcance: [
       "Diagnóstico técnico de los tramos viales",
-      "Evaluación de condiciónes junto con la comunidad",
+      "Evaluación de las condiciones junto con la comunidad",
       "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
@@ -129,13 +198,13 @@ const PROYECTOS = [
     rol: "Diagnóstico y análisis vial",
     resumen: "Revisión y diagnóstico de tramos viales en La Toma, con prioridad en condiciones de servicio y mantenimiento.",
     descripcion: [
-      "Se evaluaron los tramos viales del sector de La Toma para determinar estado actual, afectaciones y requerimientos de intervención.",
+      "Se evaluaron los tramos viales del sector de La Toma para determinar su estado actual, las afectaciones y las necesidades de intervención.",
       "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la ubicación de obras de arte.",
-      "El recorrido total caminado por el equipo fue de 73 kilometros aproximadamente."
+      "El equipo recorrió aproximadamente 73 kilómetros a pie."
     ],
     alcance: [
       "Diagnóstico técnico de los tramos viales",
-      "Evaluación de condiciónes junto con la comunidad",
+      "Evaluación de las condiciones junto con la comunidad",
       "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
@@ -172,15 +241,15 @@ const PROYECTOS = [
     anio: "2021",
     cliente: "Municipio de Suárez",
     rol: "Diagnóstico vial",
-    resumen: "Inspección técnica de vías en el sector Puerto, con análisis de afectaciones y requerimientos de intervención.",
+    resumen: "Inspección técnica de las vías del sector de Pureto, con análisis de afectaciones y necesidades de intervención.",
     descripcion: [
-      "Se adelantó un diagnóstico técnico para tramos viales del sector Pureto, revisando su condición física, operación y necesidad de mejoras.",
+      "Se adelantó un diagnóstico técnico de los tramos viales del sector Pureto, revisando su condición física y operativa, así como las necesidades de mejora.",
       "El trabajo permitió identificar puntos críticos, requerimientos de rehabilitación y priorización de intervenciones para la ubicación de obras de arte.",
-      "El recorrido total caminado por el equipo fue de 31 kilometros aproximadamente."
+      "El equipo recorrió aproximadamente 31 kilómetros a pie."
     ],
     alcance: [
       "Diagnóstico técnico de los tramos viales",
-      "Evaluación de condiciónes junto con la comunidad",
+      "Evaluación de las condiciones junto con la comunidad",
       "Base para intervención y mantenimiento"
     ],
     ubicacion: { nombre: "Suárez, Cauca, Colombia", lat: 2.9513, lng: -76.6945 },
@@ -216,7 +285,7 @@ const PROYECTOS = [
     rol: "Remodelación de instalaciones",
     resumen: "Registro de la remodelación de sedes judiciales en Corinto, Santander de Quilichao y Popayán.",
     descripcion: [
-      "Registro fotográfico de las obras de remodelación y restauraciones realizadas en instalaciones de la Rama Judicial en el Cauca."
+      "Registro fotográfico de las obras de remodelación y restauración realizadas en instalaciones de la Rama Judicial en el Cauca."
     ],
     alcance: [
       "Remodelación de instalaciones",
@@ -304,7 +373,7 @@ const PROYECTOS = [
     resumen: "Remodelación de una vivienda en el centro histórico de Popayán.",
     descripcion: [
       "Remodelación residencial de una casa construida en adobe y afectada por el terremoto de 1983 y el paso del tiempo en la ciudad de Popayán.",
-      "Se realizó la restauración de muros, vigas, cielos rasos, pisos y acabados de la vivienda, con el objetivo de conservar y copnbinar la arquitectura colonial con la arquitectura moderna y mejorar la funcionalidad y estética del espacio."
+      "Se restauraron los muros, las vigas, los cielos rasos, los pisos y los acabados de la vivienda para combinar la arquitectura colonial con la moderna y mejorar la funcionalidad y la estética del espacio."
     ],
     alcance: [
       "Remodelación residencial",
@@ -361,12 +430,12 @@ const PROYECTOS = [
     rol: "Proyecto de infraestructura",
     resumen: "Proyecto de Casa Grande para el Cabildo Indígena de Honduras, en Morales, Cauca.",
     descripcion: [
-      "Consultoria tecnica de la Casa Grande para el resguardo indígena de Honduras."
+      "Consultoría técnica para el proyecto de la Casa Grande del resguardo indígena de Honduras."
     ],
     alcance: [
       "Elaboración de diseño con propuesta vanguardista conservando la arquitectura tradicional de la región.",
       "Diseño y proyección de la construcción",
-      "Render Interactivo 3D",
+      "Render interactivo en 3D",
       "Presupuesto y cronograma de obra",
     ],
     ubicacion: { nombre: "Parque principal de Morales, Cauca", lat: 2.75750, lng: -76.63050 },
