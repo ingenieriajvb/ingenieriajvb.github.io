@@ -123,7 +123,7 @@ function getMediaSource(media, fallback = "") {
 
 function mediaToMarkup(item, alt = "") {
   if (typeof item === "string") {
-    return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${alt}"><img src="${item}" alt="${alt}" loading="lazy"></button>`;
+    return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${alt}"><img src="${item}" alt="${alt}" loading="lazy"><span class="gallery-caption" aria-hidden="true">${alt}</span></button>`;
   }
 
   if (item && typeof item === "object") {
@@ -133,7 +133,7 @@ function mediaToMarkup(item, alt = "") {
       return `<video controls preload="metadata"${poster}><source src="${src}" type="${item.mime || "video/mp4"}"></video>`;
     }
     const imageAlt = item.alt || item.caption || alt;
-    return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${imageAlt}"><img src="${src}" alt="${imageAlt}" loading="lazy"></button>`;
+    return `<button class="gallery-image-button" type="button" aria-label="Ampliar imagen: ${imageAlt}"><img src="${src}" alt="${imageAlt}" loading="lazy"><span class="gallery-caption" aria-hidden="true">${imageAlt}</span></button>`;
   }
 
   return "";
