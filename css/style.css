@@ -353,7 +353,7 @@ button{font-family:inherit;cursor:pointer;}
 }
 .hero-stats .stat span{
   font-family:var(--font-mono);
-  font-size:.68rem;
+  font-size:.8rem;
   letter-spacing:.08em;
   text-transform:uppercase;
   color:rgba(255,255,255,.6);
