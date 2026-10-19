@@ -164,7 +164,7 @@ button{font-family:inherit;cursor:pointer;}
   align-items:center;
   gap:6px;
   color:rgba(255,255,255,.85);
-  font-size:.9rem;
+  font-size:1rem;
   padding:10px 14px;
   border:none;
   background:none;
@@ -202,7 +202,7 @@ button{font-family:inherit;cursor:pointer;}
   display:block;
   color:var(--ink) !important;
   padding:10px 12px;
-  font-size:.87rem;
+  font-size:1rem;
   border-radius:2px;
 }
 .dropdown a:hover{background:var(--paper-dim);}
@@ -211,7 +211,7 @@ button{font-family:inherit;cursor:pointer;}
   border:1px solid rgba(255,255,255,.35);
   color:var(--white) !important;
   padding:8px 16px !important;
-  font-size:.82rem !important;
+  font-size:.94rem !important;
 }
 .nav-cta:hover{
   background:var(--white);
